@@ -4,11 +4,6 @@
   margin: 0;
 }
 
-body, p, a, h1, h2, h3, h4 {
-  padding: 0;
-  margin: 0;
-}
-
 li {
   list-style: none;
 }
@@ -41,30 +36,47 @@ textarea, select, input, button {
   src: url("../assets/fonts/Roboto-Regular.ttf");
   font-family: "Roboto-Regular";
 }
-.header-section {
+body {
+  transition: 0.3s ease all;
+}
+body.dark {
+  background-color: #37383C;
+}
+
+.dark-mode .modo-diurno {
+  display: none;
+}
+.dark-mode.active .modo-nocturno {
+  display: none;
+}
+.dark-mode.active .modo-diurno {
+  display: inline-block;
+}
+
+.section-header {
   width: 100%;
   position: relative;
 }
-.header-section .blue-line-up {
+.section-header .blue-line-up {
   width: 100%;
   height: 5px;
   background-color: #572EE5;
 }
-.header-section .container-logo-menu {
+.section-header .container-logo-menu {
   margin: 29px 26px 17px 22px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
 }
-.header-section .container-logo-menu .box-logo-gifos {
+.section-header .container-logo-menu .link-logo-gifos .box-logo-gifos {
   width: 49px;
 }
-.header-section .container-logo-menu .box-logo-gifos .logo-gifos {
+.section-header .container-logo-menu .link-logo-gifos .box-logo-gifos .logo-gifos {
   width: 100%;
   object-fit: cover;
 }
-.header-section .container-logo-menu .menu-gifos .checkbox-input {
+.section-header .container-logo-menu .menu-gifos .checkbox-input {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -76,67 +88,72 @@ textarea, select, input, button {
   transition: all 1s ease;
   cursor: pointer;
 }
-.header-section .container-logo-menu .menu-gifos .bars-icon {
+.section-header .container-logo-menu .menu-gifos .bars-icon, .section-header .container-logo-menu .menu-gifos .close-icon {
   color: #572EE5;
   font-size: 20px;
 }
-.header-section .container-logo-menu .menu-gifos .close-icon {
+body.dark .section-header .container-logo-menu .menu-gifos .bars-icon, body.dark .section-header .container-logo-menu .menu-gifos .close-icon {
+  color: #fff;
+}
+.section-header .container-logo-menu .menu-gifos .close-icon {
   display: none;
-  color: #572EE5;
-  font-size: 20px;
 }
-.header-section .container-logo-menu .menu-gifos .nav-gifos {
+.section-header .container-logo-menu .menu-gifos .nav-gifos {
   width: 100%;
   left: 0;
   position: absolute;
   top: 95px;
   display: none;
 }
-.header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav {
+.section-header .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav {
   height: 100vh;
   background-color: rgba(87, 46, 229, 0.9);
   padding-top: 17px;
+  transition: 0.3s ease all;
 }
-.header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li {
+body.dark .section-header .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav {
+  background-color: #000;
+}
+.section-header .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li {
   text-align: center;
 }
-.header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li .links-section {
+.section-header .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li .links-section {
   font-family: Montserrat-Bold;
   font-size: 15px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #fff;
   line-height: 60px;
   width: 100%;
 }
-.header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li .underscore-word {
+.section-header .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li .underscore-word {
   width: 41px;
   height: 0.1px;
   border: 0;
-  background-color: #FFFFFF;
+  background-color: #fff;
   opacity: 50%;
   margin: 0 auto;
 }
-.header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li:last-of-type {
+.section-header .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li:last-of-type {
   display: none;
 }
-.header-section .container-logo-menu .menu-gifos .checkbox-input:checked ~ .bars-icon {
+.section-header .container-logo-menu .menu-gifos .checkbox-input:checked ~ .bars-icon {
   display: none;
 }
-.header-section .container-logo-menu .menu-gifos .checkbox-input:checked ~ .close-icon {
+.section-header .container-logo-menu .menu-gifos .checkbox-input:checked ~ .close-icon {
   display: block;
 }
-.header-section .container-logo-menu .menu-gifos .checkbox-input:checked ~ .nav-gifos {
+.section-header .container-logo-menu .menu-gifos .checkbox-input:checked ~ .nav-gifos {
   display: block;
 }
-.header-section .container-logo-menu .menu-gifos .close-icon:checked {
+.section-header .container-logo-menu .menu-gifos .close-icon:checked {
   display: block;
   cursor: pointer;
 }
 
-.main-search-section {
+.section-main-search {
   width: 100%;
 }
-.main-search-section .title-gifos {
+.section-main-search .title-gifos {
   max-width: 286px;
   font-family: Montserrat-Bold;
   font-size: 25px;
@@ -147,19 +164,19 @@ textarea, select, input, button {
   margin: 0 auto;
   padding: 0 10px;
 }
-.main-search-section .title-gifos .only-word-gifos {
+.section-main-search .title-gifos .only-word-gifos {
   text-transform: uppercase;
   color: #5ED7C6;
 }
-.main-search-section .box-family-image {
+.section-main-search .box-family-image {
   max-width: 273px;
   margin: 31px auto 0PX;
 }
-.main-search-section .box-family-image .family-image {
+.section-main-search .box-family-image .family-image {
   width: 100%;
   object-fit: cover;
 }
-.main-search-section .container-search-gifos {
+.section-main-search .container-search-gifos {
   width: 100%;
   max-width: 334px;
   height: 50px;
@@ -170,7 +187,10 @@ textarea, select, input, button {
   justify-content: space-between;
   align-items: center;
 }
-.main-search-section .container-search-gifos .search-bar {
+body.dark .section-main-search .container-search-gifos {
+  border-color: #fff;
+}
+.section-main-search .container-search-gifos .search-bar {
   width: 100%;
   border: none;
   margin-left: 55px;
@@ -180,15 +200,19 @@ textarea, select, input, button {
   color: #000000;
   padding: 2px 0;
 }
-.main-search-section .container-search-gifos .search-icon {
+body.dark .section-main-search .container-search-gifos .search-bar {
+  background-color: #37383C;
+  color: #fff;
+}
+.section-main-search .container-search-gifos .search-icon {
   margin: 0 20px;
   color: #572EE5;
   font-size: 20px;
 }
-.main-search-section .trending-section {
+.section-main-search .trending-section {
   margin-top: 31px;
 }
-.main-search-section .trending-section .subtitle-trending {
+.section-main-search .trending-section .subtitle-trending {
   font-family: Montserrat-Bold;
   font-size: 16px;
   font-weight: 700;
@@ -196,7 +220,7 @@ textarea, select, input, button {
   text-align: center;
   line-height: 25px;
 }
-.main-search-section .trending-section .words-trending {
+.section-main-search .trending-section .words-trending {
   margin-top: 2px;
   font-family: Montserrat-Medium;
   font-size: 14px;
@@ -209,21 +233,21 @@ textarea, select, input, button {
   max-width: 225px;
 }
 
-.section-trending {
+.section-trending-gifos {
   width: 100%;
   height: 430px;
   background-color: #F3F5F8;
   text-align: center;
   margin-top: 45px;
 }
-.section-trending .trending-title {
+.section-trending-gifos .trending-title {
   padding: 40px 0 7px 0;
   line-height: 30px;
   font-size: 20px;
   color: #572EE5;
   font-family: Montserrat-Bold;
 }
-.section-trending .trending-text {
+.section-trending-gifos .trending-text {
   padding-bottom: 32px;
   line-height: 23px;
   font-size: 16px;
@@ -284,7 +308,7 @@ textarea, select, input, button {
   .header-section .container-logo-menu {
     margin: 18px 70px 13px;
   }
-  .header-section .container-logo-menu .box-logo-gifos {
+  .header-section .container-logo-menu .link-logo-gifos .box-logo-gifos {
     width: 59px;
   }
   .header-section .container-logo-menu .menu-gifos .checkbox-input {
@@ -302,8 +326,11 @@ textarea, select, input, button {
     display: flex;
     align-items: center;
     height: auto;
-    background-color: #FFFFFF;
+    background-color: #fff;
     padding-top: 0;
+  }
+  body.dark .header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav {
+    background-color: #37383C;
   }
   .header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li .links-section {
     font-size: 12px;
@@ -342,7 +369,7 @@ textarea, select, input, button {
     background-color: #572EE5;
   }
   .header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li:last-of-type .button-plus-icon:hover > .plus-icon {
-    color: #FFFFFF;
+    color: #fff;
   }
   .header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li:last-of-type .button-plus-icon:active {
     border-color: #9CAFC3;
@@ -387,6 +414,9 @@ textarea, select, input, button {
 @media (min-width: 1440px) {
   .header-section .container-logo-menu {
     margin: 23px 156px 13px;
+  }
+  .header-section .container-logo-menu .link-logo-gifos .box-logo-gifos {
+    width: 60px;
   }
   .header-section .container-logo-menu .menu-gifos .nav-gifos .list-menu-nav li .links-section {
     font-size: 13px;
@@ -438,6 +468,7 @@ textarea, select, input, button {
     font-size: 13px;
     letter-spacing: 0;
     padding: 50px 158px 57px 0;
+    text-align: end;
   }
   .section-footer .footer::before {
     background: #572EE5;
