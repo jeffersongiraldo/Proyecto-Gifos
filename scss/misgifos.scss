@@ -1,0 +1,407 @@
+@import 'reset.scss';
+@import 'variables.scss';
+@import 'typography.scss';
+
+// Estilos del header en mobile first
+.header-section {
+  width: 100%;
+  position: relative;
+  .blue-line-up {
+    width: 100%;
+    height: 5px;
+    background-color: $primary-color;
+  }
+  .container-logo-menu {
+    margin: 29px 26px 17px 22px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .link-logo-gifos {
+      .box-logo-gifos {
+        width: 49px;
+        height: 48px;
+        .logo-gifos {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .menu-gifos {
+      .checkbox-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        right: 20px;
+        top: 50px;
+        width: $menu-hamburguer-size;
+        height: $menu-hamburguer-size;
+        opacity: 0;
+        transition: all 1s ease;
+        cursor: pointer;
+      }
+      .bars-icon {
+        color: $primary-color;
+        font-size: $menu-hamburguer-size;
+      }
+      .close-icon {
+        display: none;
+        color: $primary-color;
+        font-size: $menu-hamburguer-size;
+      }
+      .nav-gifos {
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 95px;
+        display: none;
+        .list-menu-nav {
+          height: 100vh;
+          background-color: $primary-color;
+          padding-top: 17px;
+          li {
+            text-align: center;
+            .links-section {
+              font-family: Montserrat-Bold;
+              font-size: 15px;
+              font-weight: 700;
+              color: #FFFFFF;
+              line-height: 60px;
+              width: 100%;
+            }
+            .underscore-word {
+              width: 41px;
+              height: 0.1px;
+              border: 0;
+              background-color: #FFFFFF;
+              opacity: 50%;
+              margin: 0 auto;
+            }
+            &:last-of-type {
+              display: none;
+            }
+          }
+        }
+      }
+      .checkbox-input:checked {
+        &~.bars-icon {
+          display: none;
+        }
+        &~.close-icon {
+          display: block;
+        }
+        &~.nav-gifos {
+          display: block;
+        }
+      }
+      .close-icon:checked {
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.word-gifos {
+  text-transform: uppercase;
+}
+// Estilos a la seccion title e icono Mis GIFOS
+.title-section-mis-gifos {
+  margin-top: 5px;
+  text-align: center;
+  .icon-mis-gifos {
+    margin-bottom: 6px;
+  }
+  .title-mis-gifos {
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    color: $primary-color;
+    line-height: 30px;
+  }
+}
+// Estilos a la seccion Mis GIFOS sin contenido
+.mis-gifos-sin-contenido {
+  margin-top: 130px;
+  text-align: center;
+  .img-mis-gifos-sin-contenido {
+    margin-bottom: 35px;
+  }
+  .text-mis-gifos-sin-contenido {
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    color: $secondary-color;
+    line-height: 30px;
+    max-width: 270px;
+    margin: 0 auto;
+  }
+}
+// Estilos a la seccion trending de los ultimos gifos de la comunidad
+.section-trending{
+  width: 100%;
+  height: 430px;
+  background-color: $font-gray;
+  text-align: center;
+  margin-top: 45px;
+  .trending-title{
+      padding: 40px 0 7px 0;
+      line-height: 30px;
+      font-size: 20px;
+      color: $primary-color;
+      font-family: Montserrat-Bold;
+  }
+  .trending-text{
+      padding-bottom:32px;
+      line-height: 23px;
+      font-size: 16px;
+      font-family: Roboto-Regular;
+  } 
+}
+// Estilos al footer
+.section-footer{
+  width: 100%;
+  height: 196px;
+  .footer{
+      position: relative;
+      display: flex; 
+      flex-wrap: wrap; 
+      text-align: center;
+      .share{
+          padding: 47px 0 47px 0;
+          width: 100%;
+          .share-in{
+              font-size: 15px;
+              letter-spacing: 0;
+              font-family: Roboto-Regular;
+          } 
+          .content-icon{
+              text-align: center;
+              padding-top: 24px;
+              word-spacing: 19px;
+              .netwrorks{
+                color:$color-icons-social-media;
+              }
+              .netwrorks:hover{
+                color:$color-icons-hover;
+              }
+          } 
+
+      }
+      .reserved{
+          width: 100%; 
+          font-size: 14px;
+          line-height: 20px;
+          font-family: Roboto-Regular;    
+      }
+  }
+  .footer::before{
+      background: $primary-color;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      top: 196px;
+  }
+}
+// Mediaquerie vista 500px para deshabilitar el br
+@media (min-width:500px){
+  br{
+      display: none;
+  }
+}
+
+// mediaquerie vista Tablet 750px
+@media (min-width: 750px) {
+  // Estilos al header y al nav
+  .header-section {
+    .container-logo-menu {
+      margin: 18px 70px 13px;
+      .link-logo-gifos {
+        .box-logo-gifos {
+          width: 59px;
+        }
+      }  
+      .menu-gifos {
+        .checkbox-input {
+          display: none;
+        }
+        .bars-icon {
+          display: none;
+        }
+        .nav-gifos {
+          display: inline-block;
+          position: relative;
+          top: 0;
+          .list-menu-nav {
+            display: flex;
+            align-items: center;
+            height: auto;
+            background-color: #FFFFFF;
+            padding-top: 0;
+            li {
+              .links-section {
+                font-size: 12px;
+                letter-spacing: 0;
+                text-align: center;
+                text-transform: uppercase;
+                color: $primary-color;
+                margin-right: 30px;
+              }
+              .links-section:hover {
+                border-bottom: 2px solid $secondary-color;
+              }
+              .links-section:active {
+                color: $ternary-color;
+                border-bottom: none;
+              }
+              .link-mygifos {
+                color: $ternary-color;
+              }
+              .underscore-word {
+                display: none;
+              }
+              &:last-of-type {
+                display: inline-block;
+                .button-plus-icon {
+                  width: 42px;
+                  height: 42px;
+                  border: 1px solid $primary-color;
+                  border-radius: 50%;
+                  background-color: #fff;              
+                  .plus-icon {
+                    color: $primary-color;
+                    font-size: 36px;
+                    padding: 9px;
+                  }
+                }
+                .button-plus-icon:hover {
+                  background-color: $primary-color;
+                  &>.plus-icon {
+                    color: #FFFFFF;
+                  }
+                }
+                .button-plus-icon:active {
+                  border-color: $ternary-color;
+                  background-color: $ternary-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // Estilos a la seccion title e icono Mis GIFOS
+  .title-section-mis-gifos {
+    margin-top: 10px;
+    .icon-mis-gifos {
+      margin-bottom: 8px;
+    }
+    .title-mis-gifos {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+  // Estilos a la seccion Mis GIFOS sin contenido
+  .mis-gifos-sin-contenido {
+    margin-top: 111px;
+    .img-mis-gifos-sin-contenido {
+      margin-bottom: 40px;
+    }
+    .text-mis-gifos-sin-contenido {
+      font-size: 22px;
+      max-width: none;
+    }
+  }
+}
+
+
+// mediaquerie vista Desktop 1440px
+
+@media (min-width: 1440px) {
+  // Estilos al header y al nav
+  .header-section {
+    .container-logo-menu {
+      margin: 23px 156px 13px;
+      .menu-gifos {
+        .nav-gifos {
+          .list-menu-nav {
+            li {
+              .links-section {
+                font-size: 13px;
+                margin-right: 45px;
+              }
+              &:last-of-type {
+                .button-plus-icon {
+                  width: 54px;
+                  height: 54px;       
+                  .plus-icon {
+                    font-size: 45px;
+                    padding: 12px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // Estilos a la seccion title e icono Mis GIFOS
+  .title-section-mis-gifos {
+    .title-mis-gifos {
+      font-size: 25px;
+    }
+  }
+  // Estilos a la seccion Mis GIFOS sin contenido
+  .mis-gifos-sin-contenido {
+    .text-mis-gifos-sin-contenido {
+      line-height: 25px;
+    }
+  }
+  .section-trending{
+    width: 100%;
+    height: 640px;
+    background-color: $font-gray;
+    margin-top: 95px;
+    .trending-title{
+        padding: 67px 0 12px 0;
+        font-size: 25px;
+    }
+    .trending-text{
+        padding-bottom:53px;
+        font-size: 18px;
+    }   
+  }
+  .section-footer{
+      height: 116px;
+      .footer{
+      //    justify-content: center;
+          .share{
+              display: flex;
+              padding: 50px 0 57px 156px;
+              width: 50%; 
+              .share-in{
+                  font-size: 13px;
+                  margin-right: 17px; 
+              } 
+              .content-icon{
+                  text-align: center;
+                  padding-top: 0;
+                  word-spacing: 19px;
+              } 
+          }
+          .reserved{
+              width: 50%; 
+              font-size: 13px;
+              letter-spacing: 0;
+              padding: 50px 158px 57px 0; 
+              text-align: end;
+          }
+      }
+      .footer::before{
+          background: $primary-color;
+          content: '';
+          position: absolute;
+          top: 116px;
+      }
+  }
+}
