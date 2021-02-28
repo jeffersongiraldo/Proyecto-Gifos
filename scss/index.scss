@@ -2,13 +2,6 @@
 @import 'variables.scss';
 @import 'typography.scss';
 
-body {
-  transition: .3s ease all;
-  &.dark {
-    background-color: $background-dark-mode;
-  }
-}
-
 // Codigo para cambiar el texto de modo nocturno y modo diurno
 .dark-mode {
   .modo-diurno {
@@ -24,120 +17,129 @@ body {
   }
 }
 
-@mixin darkmode {
+// Mixins para el Modo Nocturno 
+@mixin darkmode-white-color {
   body.dark & {
     color: $white-color;
   }
 }
+@mixin darkmode-black-background {
+  body.dark & {
+    background-color: #000000;
+  }
+}
 
+// Estilos vista Mobile First 
+body {
+  transition: .3s ease all;
+  &.dark { // Estilo que se aplicará al body cuando se active la clase Dark
+    background-color: $background-dark-mode;
+  }
+}
 .section-header {
+  width: 100%;
+  position: relative;
+  .blue-line-up {
     width: 100%;
-    position: relative;
-    .blue-line-up {
-      width: 100%;
-      height: 5px;
-      background-color: $primary-color;
-      body.dark & {
-        background-color: #000000;
+    height: 5px;
+    background-color: $primary-color;
+    @include darkmode-black-background();
+  }
+  .container-logo-menu {
+    margin: 29px 26px 17px 22px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    .link-logo-gifos {
+      .box-logo-gifos {
+        width: 49px;
+        .logo-gifos {
+          width: 100%;
+          object-fit: cover;
+        }
       }
     }
-    .container-logo-menu {
-      margin: 29px 26px 17px 22px;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center;
-      .link-logo-gifos {
-        .box-logo-gifos {
-          width: 49px;
-          .logo-gifos {
-            width: 100%;
-            object-fit: cover;
+    .menu-gifos {
+      .checkbox-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        right: 20px;
+        top: 50px;
+        width: $menu-hamburguer-size;
+        height: $menu-hamburguer-size;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .bars-icon, .close-icon {
+        transition: .4s ease all;
+        color: $primary-color;
+        font-size: $menu-hamburguer-size;
+        @include darkmode-white-color();
+      }
+      .close-icon {
+        display: none;
+      }
+      .nav-gifos {
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 95px;
+        display: none;
+        .list-menu-nav {
+          height: 100vh;
+          background-color: rgba(87,46,229,0.90);
+          padding-top: 17px;
+          transition: .3s ease all;
+          @include darkmode-black-background();
+          li {
+            text-align: center;
+            .links-section {
+              font-family: Montserrat-Bold;
+              font-size: 15px;
+              font-weight: 700;
+              color: $white-color;
+              line-height: 60px;
+              width: 100%;
+            }
+            .underscore-word {
+              width: 41px;
+              height: 0.1px;
+              border: 0;
+              background-color: $white-color;
+              opacity: 50%;
+              margin: 0 auto;
+            }
+            &:last-of-type {
+              display: none;
+            }
           }
         }
       }
-      .menu-gifos {
-        .checkbox-input {
-          position: absolute;
-          margin: 0;
-          padding: 0;
-          right: 20px;
-          top: 50px;
-          width: $menu-hamburguer-size;
-          height: $menu-hamburguer-size;
-          opacity: 0;
-          cursor: pointer;
-        }
-        .bars-icon, .close-icon {
-          transition: .4s ease all;
-          color: $primary-color;
-          font-size: $menu-hamburguer-size;
-          body.dark & {
-            color: $white-color;
-          }
-        }
-        .close-icon {
+      .checkbox-input:checked {
+        &~.bars-icon {
           display: none;
         }
-        .nav-gifos {
-          width: 100%;
-          left: 0;
-          position: absolute;
-          top: 95px;
-          display: none;
-          .list-menu-nav {
-            height: 100vh;
-            background-color: rgba(87,46,229,0.90);
-            padding-top: 17px;
-            transition: .3s ease all;
-            body.dark & {
-              background-color: #000000;
-            }
-            li {
-              text-align: center;
-              .links-section {
-                font-family: Montserrat-Bold;
-                font-size: 15px;
-                font-weight: 700;
-                color: $white-color;
-                line-height: 60px;
-                width: 100%;
-              }
-              .underscore-word {
-                width: 41px;
-                height: 0.1px;
-                border: 0;
-                background-color: $white-color;
-                opacity: 50%;
-                margin: 0 auto;
-              }
-              &:last-of-type {
-                display: none;
-              }
-            }
-          }
-        }
-        .checkbox-input:checked {
-          &~.bars-icon {
-            display: none;
-          }
-          &~.close-icon {
-            display: block;
-          }
-          &~.nav-gifos {
-            display: block;
-          }
-        }
-        .close-icon:checked {
+        &~.close-icon {
           display: block;
-          cursor: pointer;
         }
+        &~.nav-gifos {
+          display: block;
+        }
+      }
+      .close-icon:checked {
+        display: block;
+        cursor: pointer;
       }
     }
   }
-
+}
 .section-main-search {
   width: 100%;
+  &.desactiveSection {
+    display: none;
+  }
   .title-gifos {
     max-width: 286px;
     font-family: Montserrat-Bold;
@@ -148,7 +150,7 @@ body {
     text-align: center;
     margin: 0 auto;
     padding: 0 10px;
-    @include darkmode();
+    @include darkmode-white-color();
     .only-word-gifos {
       text-transform: uppercase;
       color: $secondary-color;
@@ -193,7 +195,7 @@ body {
       margin: 0 20px;
       color: $primary-color;
       font-size: 20px;
-      @include darkmode();
+      @include darkmode-white-color();
     }
   }
   .trending-section {
@@ -217,7 +219,83 @@ body {
     .subtitle-trending, .words-trending {
       color: $primary-color;
       text-align: center;
-      @include darkmode();
+      @include darkmode-white-color();
+    }
+  }
+}
+.section-favoritos {
+  display: none;
+  &.activeSection {
+    display: block;
+  }
+  // Estilos a la seccion title e icono Fav
+  .container-title-favoritos {
+    margin-top: 5px;
+    text-align: center;
+    .icon-favoritos {
+      width: 28px;
+      margin-bottom: 7px;
+    }
+    .title-favoritos {
+      font-family: Montserrat-Bold;
+      font-size: 20px;
+      color: $primary-color;
+      line-height: 30px;
+    }
+  }
+  // Estilos a la seccion fav sin contenido
+  .fav-sin-contenido {
+    margin-top: 120px;
+    text-align: center;
+    .img-fav-sin-contenido {
+      margin-bottom: 28px;
+    }
+    .text-fav-sin-contenido {
+      font-family: Montserrat-Bold;
+      font-size: 20px;
+      color: $secondary-color;
+      line-height: 30px;
+      max-width: 310px;
+      margin: 0 auto;
+    }
+  }
+}
+.section-mis-gifos {
+  display: none;
+  &.activeSection {
+    display: block;
+  }
+  // Estilos a la seccion title e icono Mis GIFOS
+  .container-title-mis-gifos {
+    margin-top: 5px;
+    text-align: center;
+    .icon-mis-gifos {
+      margin-bottom: 6px;
+    }
+    .title-mis-gifos {
+      font-family: Montserrat-Bold;
+      font-size: 20px;
+      color: $primary-color;
+      line-height: 30px;
+      .word-gifos {
+        text-transform: uppercase;
+      }
+    }
+  }
+  // Estilos a la seccion Mis GIFOS sin contenido
+  .mis-gifos-sin-contenido {
+    margin-top: 130px;
+    text-align: center;
+    .img-mis-gifos-sin-contenido {
+      margin-bottom: 35px;
+    }
+    .text-mis-gifos-sin-contenido {
+      font-family: Montserrat-Bold;
+      font-size: 20px;
+      color: $secondary-color;
+      line-height: 30px;
+      max-width: 270px;
+      margin: 0 auto;
     }
   }
 }
@@ -236,14 +314,14 @@ body {
     font-size: 20px;
     color: $primary-color;
     font-family: Montserrat-Bold;
-    @include darkmode();
+    @include darkmode-white-color();
   }
   .trending-text{
     padding-bottom:32px;
     line-height: 23px;
     font-size: 16px;
     font-family: Roboto-Regular;
-    @include darkmode();
+    @include darkmode-white-color();
   } 
 }
 .section-footer{
@@ -261,7 +339,7 @@ body {
         font-size: 15px;
         letter-spacing: 0;
         font-family: Roboto-Regular;
-        @include darkmode();
+        @include darkmode-white-color();
       } 
       .content-icon{
         text-align: center;
@@ -272,7 +350,7 @@ body {
         }
         .netwrorks:hover{
           color:$color-icons-hover;
-          @include darkmode();
+          @include darkmode-white-color();
         }
       } 
     }
@@ -281,7 +359,7 @@ body {
       font-size: 14px;
       line-height: 20px;
       font-family: Roboto-Regular; 
-      @include darkmode();   
+      @include darkmode-white-color();   
     }
   }
   .footer::before{
@@ -293,9 +371,6 @@ body {
     top: 196px;
   }
 }
-
-// Styles dark mode
-
 
 @media (min-width:500px){
   br{
@@ -339,8 +414,9 @@ body {
                 text-transform: uppercase;
                 color: $primary-color;
                 margin-right: 30px;
-                body.dark & {
-                  color: $white-color;
+                @include darkmode-white-color();
+                &.activeLink {
+                  color: $ternary-color;
                 }
               }
               .links-section:hover {
@@ -438,7 +514,51 @@ body {
         max-width: none;
       }
     }  
-  }    
+  }
+  .section-favoritos {
+    .container-title-section { // Estilos a la seccion title e icono Fav
+      margin-top:11px;
+      .icon-favoritos {
+        margin-bottom: 8px;
+      }
+      .title-favoritos {
+        font-size: 25px;
+      }
+    }
+    .fav-sin-contenido { // Estilos a la seccion fav sin contenido
+      margin-top: 110px;
+      .img-fav-sin-contenido {
+        margin-bottom: 24px;
+      }
+      .text-fav-sin-contenido {
+        font-size: 22px;
+        line-height: 33px;
+        max-width: 430px;
+      }
+    }
+  } 
+  .section-mis-gifos {
+    .container-title-mis-gifos { // Estilos a la seccion title e icono Mis GIFOS
+      margin-top: 10px;
+      .icon-mis-gifos {
+        margin-bottom: 8px;
+      }
+      .title-mis-gifos {
+        font-size: 22px;
+        line-height: 30px;
+      }
+    }
+    .mis-gifos-sin-contenido { // Estilos a la seccion Mis GIFOS sin contenido
+      margin-top: 111px;
+      .img-mis-gifos-sin-contenido {
+        margin-bottom: 40px;
+      }
+      .text-mis-gifos-sin-contenido {
+        font-size: 22px;
+        max-width: none;
+      }
+    }
+  }
 } 
 @media (min-width:1440px){
   .section-header {
@@ -470,6 +590,19 @@ body {
             }
           }
         }
+      }
+    }
+  }
+  .section-mis-gifos {
+    .container-title-mis-gifos {
+      .title-mis-gifos {
+        font-size: 25px;
+      }
+    }
+    // Estilos a la seccion Mis GIFOS sin contenido
+    .mis-gifos-sin-contenido {
+      .text-mis-gifos-sin-contenido {
+        line-height: 25px;
       }
     }
   }
