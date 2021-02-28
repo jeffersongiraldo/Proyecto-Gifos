@@ -225,7 +225,7 @@ body {
 }
 .section-favoritos {
   display: none;
-  &.activeSection {
+  &.activeSection { // Se muestra el contenido cuando se activa la clase desde JS
     display: block;
   }
   // Estilos a la seccion title e icono Fav
@@ -262,7 +262,7 @@ body {
 }
 .section-mis-gifos {
   display: none;
-  &.activeSection {
+  &.activeSection { // Se muestra el contenido cuando se activa la clase desde JS
     display: block;
   }
   // Estilos a la seccion title e icono Mis GIFOS
@@ -372,8 +372,8 @@ body {
   }
 }
 
-@media (min-width:500px){
-  br{
+@media (min-width:500px){ // Mediaquerie para deshabilitar el salto de linea a los 500px
+  br{ 
     display: none;
   }
 }
