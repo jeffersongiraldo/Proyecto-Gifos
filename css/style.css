@@ -46,10 +46,6 @@ textarea, select, input, button {
   display: inline-block;
 }
 
-.desactiveSection {
-  display: none;
-}
-
 .boxGifoSearch {
   width: 156px;
   height: 120px;
@@ -243,7 +239,7 @@ body.dark .section-main-search .container-search-gifos .button-search .search-ic
   color: #fff;
 }
 .section-main-search .trending-section {
-  margin-top: 31px;
+  margin: 31px 0px 35px;
 }
 .section-main-search .trending-section .subtitle-trending {
   font-family: Montserrat-Bold;
@@ -267,6 +263,44 @@ body.dark .section-main-search .container-search-gifos .button-search .search-ic
 }
 body.dark .section-main-search .trending-section .subtitle-trending, body.dark .section-main-search .trending-section .box-words-trending {
   color: #fff;
+}
+.section-main-search .line-section {
+  display: none;
+  width: 157px;
+  height: 1px;
+  border: 1px solid #9CAFC3;
+  opacity: 0.5;
+  margin: 0 auto;
+}
+.section-main-search .line-section.activeSection {
+  display: block;
+}
+.section-main-search .line-section.search-sin-contenido.active {
+  display: block;
+}
+.section-main-search .section-gifos-search .search-sin-contenido {
+  display: none;
+  text-align: center;
+}
+.section-main-search .section-gifos-search .search-sin-contenido.activeSection {
+  display: block;
+}
+.section-main-search .section-gifos-search .search-sin-contenido h3 {
+  font-family: Montserrat-Bold;
+  font-size: 25px;
+  color: #572EE5;
+  line-height: 30px;
+  margin-top: 43px;
+}
+.section-main-search .section-gifos-search .search-sin-contenido .img-search-sin-contenido {
+  margin-top: 50px;
+}
+.section-main-search .section-gifos-search .search-sin-contenido .text-search-sin-contenido {
+  font-family: Montserrat-Bold;
+  font-size: 18px;
+  color: #5ED7C6;
+  line-height: 25px;
+  margin-top: 29px;
 }
 .section-main-search .section-gifos-search .container-gifos-search {
   display: flex;
@@ -566,7 +600,7 @@ body.dark .section-footer .footer .reserved {
     color: #9CAFC3;
   }
   .section-main-search .trending-section {
-    margin-top: 73px;
+    margin: 73px 0px;
   }
   .section-main-search .trending-section .subtitle-trending {
     font-size: 18px;
@@ -575,6 +609,20 @@ body.dark .section-footer .footer .reserved {
     margin-top: 7px;
     font-size: 16px;
     max-width: none;
+  }
+  .section-main-search .line-section {
+    width: 338px;
+    height: 0.1px;
+  }
+  .section-main-search .section-gifos-search .search-sin-contenido h3 {
+    font-size: 30px;
+    margin-top: 84px;
+  }
+  .section-main-search .section-gifos-search .search-sin-contenido .img-search-sin-contenido {
+    margin-top: 109px;
+  }
+  .section-main-search .section-gifos-search .search-sin-contenido .text-search-sin-contenido {
+    font-size: 22px;
   }
 
   .section-favoritos .container-title-section {

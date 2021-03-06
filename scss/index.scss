@@ -29,9 +29,16 @@
   }
 }
 
-// Create the class to desactive sections
-.desactiveSection {
-  display: none;
+// Mixins para activar y desactivar secciones
+@mixin activeSection {
+  &.activeSection {
+    display: block;
+  }
+}
+@mixin desactiveSection {
+  &.desactiveSection {
+    display: none;
+  }
 }
 
 // Estilos a la caja de los gifos
@@ -222,7 +229,7 @@ body {
     }
   }
   .trending-section {
-    margin-top: 31px;
+    margin: 31px 0px 35px;
     .subtitle-trending {
       font-family: Montserrat-Bold;
       font-size: 16px;
@@ -245,7 +252,41 @@ body {
       @include darkmode-white-color();
     }
   }
+  .line-section {
+    display: none;
+    width: 157px;
+    height: 1px;
+    border: 1px solid #9CAFC3;
+    opacity: 0.5;
+    margin: 0 auto;
+    @include activeSection();
+    &.search-sin-contenido.active {
+      display: block;
+    }
+  }
   .section-gifos-search {
+    .search-sin-contenido {
+      display: none;
+      text-align: center;
+      @include activeSection();
+      h3 {
+        font-family: Montserrat-Bold;
+        font-size: 25px;
+        color: $primary-color;
+        line-height: 30px;
+        margin-top: 43px;
+      }
+      .img-search-sin-contenido {
+        margin-top: 50px;
+      }
+      .text-search-sin-contenido {
+        font-family: Montserrat-Bold;
+        font-size: 18px;
+        color: $secondary-color;
+        line-height: 25px;
+        margin-top: 29px;
+      }
+    }
     .container-gifos-search {
       display: flex;
       flex-flow: row wrap;
@@ -539,7 +580,7 @@ body {
       }
     }
     .trending-section {
-      margin-top: 73px;
+      margin: 73px 0px;
       .subtitle-trending {
         font-size: 18px;
       }
@@ -548,7 +589,25 @@ body {
         font-size: 16px;
         max-width: none;
       }
-    }  
+    } 
+    .line-section {
+      width: 338px;
+      height: 0.1px;
+    }
+    .section-gifos-search {
+      .search-sin-contenido {
+        h3 {
+          font-size: 30px;
+          margin-top: 84px;
+        }
+        .img-search-sin-contenido {
+          margin-top: 109px;
+        }
+        .text-search-sin-contenido {
+          font-size: 22px;
+        }
+      } 
+    }
   }
   .section-favoritos {
     .container-title-section { // Estilos a la seccion title e icono Fav
