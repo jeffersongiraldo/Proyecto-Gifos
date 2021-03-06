@@ -46,6 +46,22 @@ textarea, select, input, button {
   display: inline-block;
 }
 
+.desactiveSection {
+  display: none;
+}
+
+.boxGifoSearch {
+  width: 156px;
+  height: 120px;
+  margin: 25px 10px;
+}
+
+.gifoSearch {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 body {
   transition: 0.3s ease all;
 }
@@ -203,7 +219,7 @@ body.dark .section-main-search .container-search-gifos {
   width: 100%;
   border: none;
   margin-left: 55px;
-  font-family: Robo-Regular;
+  font-family: Roboto-Regular;
   font-size: 16px;
   font-weight: 400;
   color: #000000;
@@ -213,12 +229,17 @@ body.dark .section-main-search .container-search-gifos .search-bar {
   background-color: #37383C;
   color: #fff;
 }
-.section-main-search .container-search-gifos .search-icon {
+.section-main-search .container-search-gifos .button-search {
+  border: none;
   margin: 0 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.section-main-search .container-search-gifos .button-search .search-icon {
   color: #572EE5;
   font-size: 20px;
 }
-body.dark .section-main-search .container-search-gifos .search-icon {
+body.dark .section-main-search .container-search-gifos .button-search .search-icon {
   color: #fff;
 }
 .section-main-search .trending-section {
@@ -240,12 +261,17 @@ body.dark .section-main-search .container-search-gifos .search-icon {
   text-transform: capitalize;
   max-width: 225px;
 }
-.section-main-search .trending-section .subtitle-trending, .section-main-search .trending-section .words-trending {
+.section-main-search .trending-section .subtitle-trending, .section-main-search .trending-section .box-words-trending {
   color: #572EE5;
   text-align: center;
 }
-body.dark .section-main-search .trending-section .subtitle-trending, body.dark .section-main-search .trending-section .words-trending {
+body.dark .section-main-search .trending-section .subtitle-trending, body.dark .section-main-search .trending-section .box-words-trending {
   color: #fff;
+}
+.section-main-search .section-gifos-search .container-gifos-search {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .section-favoritos {
@@ -412,6 +438,12 @@ body.dark .section-footer .footer .reserved {
   }
 }
 @media (min-width: 750px) {
+  .boxGifoSearch {
+    width: 200px;
+    height: 180px;
+    margin: 25px 10px;
+  }
+
   .section-header .container-logo-menu {
     margin: 18px 70px 13px;
   }
@@ -588,6 +620,12 @@ body.dark .section-footer .footer .reserved {
   }
 }
 @media (min-width: 1440px) {
+  .boxGifoSearch {
+    width: 260px;
+    height: 200px;
+    margin: 30px 15px;
+  }
+
   .section-header .container-logo-menu {
     margin: 23px 156px 13px;
   }

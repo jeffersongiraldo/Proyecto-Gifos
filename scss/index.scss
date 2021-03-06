@@ -29,6 +29,24 @@
   }
 }
 
+// Create the class to desactive sections
+.desactiveSection {
+  display: none;
+}
+
+// Estilos a la caja de los gifos
+.boxGifoSearch {
+  width: 156px;
+  height: 120px;
+  margin: 25px 10px;
+}
+// Estilos a los gifos
+.gifoSearch {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 // Estilos vista Mobile First 
 body {
   transition: .3s ease all;
@@ -181,7 +199,7 @@ body {
       width: 100%;
       border: none;
       margin-left: 55px;
-      font-family: Robo-Regular;
+      font-family: Roboto-Regular;
       font-size: 16px;
       font-weight: 400;
       color: #000000;
@@ -191,11 +209,16 @@ body {
         color: $white-color;
       }
     }
-    .search-icon {
+    .button-search {
+      border: none;
       margin: 0 20px;
-      color: $primary-color;
-      font-size: 20px;
-      @include darkmode-white-color();
+      cursor: pointer;
+      background-color: transparent;
+      .search-icon {
+        color: $primary-color;
+        font-size: 20px;
+        @include darkmode-white-color();
+      }
     }
   }
   .trending-section {
@@ -216,10 +239,17 @@ body {
       text-transform: capitalize;
       max-width: 225px;
     }
-    .subtitle-trending, .words-trending {
+    .subtitle-trending, .box-words-trending {
       color: $primary-color;
       text-align: center;
       @include darkmode-white-color();
+    }
+  }
+  .section-gifos-search {
+    .container-gifos-search {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
     }
   }
 }
@@ -378,6 +408,11 @@ body {
   }
 }
 @media (min-width:750px){
+  .boxGifoSearch {
+    width: 200px;
+    height: 180px;
+    margin: 25px 10px;
+  }
   .section-header {
     .container-logo-menu {
       margin: 18px 70px 13px;
@@ -561,6 +596,12 @@ body {
   }
 } 
 @media (min-width:1440px){
+  // Estilos a la caja de los gifos
+  .boxGifoSearch {
+    width: 260px;
+    height: 200px;
+    margin: 30px 15px;
+  }
   .section-header {
     .container-logo-menu {
       margin: 23px 156px 13px;

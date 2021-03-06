@@ -59,11 +59,25 @@
       </figure>
       <div class="container-search-gifos">
         <input type="text" class="search-bar" id="search-bar" placeholder="Busca GIFOS y más">
-        <i class="search-icon fas fa-search" id="search-icon"></i>
+        <button class="button-search" id="button-search">
+          <i class="search-icon fas fa-search"></i>
+        </button>
+        <!-- <div class="container-suggestion-search" id="cont-suggestion-search">
+        </div> -->
       </div>
-      <div class="trending-section">
+      <div class="trending-section" id="trending-section">
         <h3 class="subtitle-trending">Trending</h3>
-        <p class="words-trending">Reactions, entertainment, sports, stickers, artists</p>
+        <div class="box-words-trending">
+          <span class="words-trending">Reactions</span>,
+          <span class="words-trending">entertainment</span>,
+          <span class="words-trending">sports</span>,
+          <span class="words-trending">stickers</span>,
+          <span class="words-trending">artists</span>
+        </div>
+      </div>
+      <div class="section-gifos-search" id="section-gifos-search">
+        <h2 class="title-search"></h2>
+        <div class="container-gifos-search" id="container-gifos-search"></div>
       </div>
   </section> 
   <section class="section-favoritos" id="section-favoritos">
@@ -109,5 +123,6 @@
     </footer>
   </section>
   <script src="./js/script.js"> </script>   
+  <script src="./js/api.js"></script>
 </body>
 </html>
