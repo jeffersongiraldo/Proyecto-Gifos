@@ -1,6 +1,7 @@
 // JS variables
 const buttonSearch = document.querySelector('#button-search');
 const searchBar = document.querySelector('#search-bar');
+const trendingSection = document.querySelector('#trending-section');
 const tagsTrendingGifos = document.getElementsByClassName('words-trending');
 const lineSection = document.getElementsByClassName('line-section')[0];
 
@@ -22,11 +23,11 @@ searchBar.addEventListener('keydown', (event) => {
 
 // Fetch Data from the API to gifos searched
 async function sendApiRequest() {
+  lineSection.classList.add('activeSection'); // Se activa la linea que divide las secciones
+  trendingSection.classList.add('desactiveSection');
   let userInput = document.querySelector('#search-bar').value
   let response = await fetch(`${apiGiphy}search${apikey}&q=${userInput}`)
-  console.log(response) // Para visualizar el fetch
   let gifos = await response.json()
-  lineSection.classList.add('activeSection');
   console.log(gifos) // Para visualizar el fetch con json
   useApiData(gifos)
 };
@@ -36,6 +37,8 @@ function useApiData(gifos) {
   let sectionGifosSearch = document.querySelector('#section-gifos-search');
   let containerGifosSearch = document.querySelector('#container-gifos-search');
   let searchSinContenido = document.getElementsByClassName('search-sin-contenido')[0];
+  let titleSearch = document.querySelector('#title-search');
+  titleSearch.textContent = document.querySelector('#search-bar').value
   if (sectionGifosSearch.childElementCount > 0) { // Condition to clean the container every time the user does a search
     containerGifosSearch.innerHTML = "";
   }

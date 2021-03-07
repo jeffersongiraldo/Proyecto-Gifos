@@ -241,6 +241,9 @@ body.dark .section-main-search .container-search-gifos .button-search .search-ic
 .section-main-search .trending-section {
   margin: 31px 0px 35px;
 }
+.section-main-search .trending-section.desactiveSection {
+  display: none;
+}
 .section-main-search .trending-section .subtitle-trending {
   font-family: Montserrat-Bold;
   font-size: 16px;
@@ -278,19 +281,23 @@ body.dark .section-main-search .trending-section .subtitle-trending, body.dark .
 .section-main-search .line-section.search-sin-contenido.active {
   display: block;
 }
+.section-main-search .section-gifos-search {
+  text-align: center;
+}
+.section-main-search .section-gifos-search .title-search {
+  font-family: Montserrat-Bold;
+  font-size: 25px;
+  text-transform: capitalize;
+  color: #572EE5;
+  line-height: 30px;
+  margin-top: 43px;
+}
 .section-main-search .section-gifos-search .search-sin-contenido {
   display: none;
   text-align: center;
 }
 .section-main-search .section-gifos-search .search-sin-contenido.activeSection {
   display: block;
-}
-.section-main-search .section-gifos-search .search-sin-contenido h3 {
-  font-family: Montserrat-Bold;
-  font-size: 25px;
-  color: #572EE5;
-  line-height: 30px;
-  margin-top: 43px;
 }
 .section-main-search .section-gifos-search .search-sin-contenido .img-search-sin-contenido {
   margin-top: 50px;
@@ -302,7 +309,7 @@ body.dark .section-main-search .trending-section .subtitle-trending, body.dark .
   line-height: 25px;
   margin-top: 29px;
 }
-.section-main-search .section-gifos-search .container-gifos-search {
+.section-main-search .section-gifos-search .search-con-contenido .container-gifos-search {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -614,7 +621,7 @@ body.dark .section-footer .footer .reserved {
     width: 338px;
     height: 0.1px;
   }
-  .section-main-search .section-gifos-search .search-sin-contenido h3 {
+  .section-main-search .section-gifos-search .title-search {
     font-size: 30px;
     margin-top: 84px;
   }

@@ -230,6 +230,7 @@ body {
   }
   .trending-section {
     margin: 31px 0px 35px;
+    @include desactiveSection();
     .subtitle-trending {
       font-family: Montserrat-Bold;
       font-size: 16px;
@@ -265,17 +266,19 @@ body {
     }
   }
   .section-gifos-search {
+    text-align: center;
+    .title-search {
+      font-family: Montserrat-Bold;
+      font-size: 25px;
+      text-transform: capitalize;
+      color: $primary-color;
+      line-height: 30px;
+      margin-top: 43px;
+    }
     .search-sin-contenido {
       display: none;
       text-align: center;
       @include activeSection();
-      h3 {
-        font-family: Montserrat-Bold;
-        font-size: 25px;
-        color: $primary-color;
-        line-height: 30px;
-        margin-top: 43px;
-      }
       .img-search-sin-contenido {
         margin-top: 50px;
       }
@@ -287,10 +290,12 @@ body {
         margin-top: 29px;
       }
     }
-    .container-gifos-search {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
+    .search-con-contenido {
+      .container-gifos-search {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+      }
     }
   }
 }
@@ -595,11 +600,11 @@ body {
       height: 0.1px;
     }
     .section-gifos-search {
+      .title-search {
+        font-size: 30px;
+        margin-top: 84px;
+      }
       .search-sin-contenido {
-        h3 {
-          font-size: 30px;
-          margin-top: 84px;
-        }
         .img-search-sin-contenido {
           margin-top: 109px;
         }
