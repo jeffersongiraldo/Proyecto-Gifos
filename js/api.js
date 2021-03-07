@@ -44,6 +44,7 @@ function useApiData(gifos) {
   }
   if (gifos.data.length < 1) {
     searchSinContenido.classList.add('activeSection');
+    trendingSection.classList.remove('desactiveSection');
   } else {
     limit = 12;
     searchSinContenido.classList.remove('activeSection')
