@@ -9,7 +9,7 @@
     <script
     src="https://use.fontawesome.com/releases/v5.15.2/js/all.js">
     </script>
-  </head>
+</head>
 <body>
   <header class="section-header">
     <div class="blue-line-up"></div>
@@ -95,7 +95,7 @@
         <button class="button-ver-mas" id="button-ver-mas">Ver Más</button>
       </div>
     </div>
-  </section> 
+  </section>
   <section class="section-favoritos" id="section-favoritos">
     <div class="container-title-favoritos">
       <img class="icon-favoritos" src="./assets/icon/icon-favoritos.svg" alt="Corazón color verde esmeralda">
@@ -103,7 +103,7 @@
     </div>
     <div class="fav-sin-contenido">
       <img class="img-fav-sin-contenido" src="./assets/icon/icon-fav-sin-contenido.svg" alt="corazon con cara triste">
-      <p class="text-fav-sin-contenido">¡Guarda tu primer GIFO en Favoritos 
+      <p class="text-fav-sin-contenido">¡Guarda tu primer GIFO en Favoritos
         para que se muestre aquí!</p>
     </div>
   </section>
@@ -113,23 +113,68 @@
       <h3 class="title-mis-gifos">Mis <span class="word-gifos">Gifos</span></h3>
     </div>
     <div class="mis-gifos-sin-contenido">
-      <img class="img-mis-gifos-sin-contenido" src="./assets/icon/icon-mis-gifos-sin-contenido.svg" alt="icono con cara seria">
+      <img class="img-mis-gifos-sin-contenido" src="./assets/icon/icon-mis-gifos-sin-contenido.svg"
+        alt="icono con cara seria">
       <div class="text-mis-gifos-sin-contenido">¡Anímate a crear tu primer <span class="word-gifos">Gifo</span>!</div>
     </div>
   </section>
-  <section class="section-trending-gifos" id="section-trending-gifos">
-    <h2 class="trending-title">Trending: GIFOS</h2>
-    <p class="trending-text">Mira los últimos <br> GIFOS de nuestra comunidad.</p> 
-    <div class="carrousel">
-    </div>          
+  <!--Caja template de los gifos, la que se clonará-->
+  <section class="container_template" id="container_template">
+    <label for="label_view">
+      <img src="./assets/img/prueba.jpg" alt="gifs" class="gif_clone" id="gif_clone">
+    </label>
+    <div class="container_template-hover">
+      <!--iconos con hover, fondo hover-->
+      <div class="icons_container_template">
+        <div class="top_icons icon_fav">
+          <img src="./assets/img/icon-fav.svg" alt="Favicon imagen" class="top_icons_simple">
+          <img src="./assets/img/icon-fav-hover.svg" alt="Favicon imagen" class="top_icons-hover">
+        </div>
+        <div class="top_icons icon_download">
+          <img src="./assets/img/icon-download.svg" alt="Solo descargas" class="top_icons_simple">
+          <img src="./assets/img/icon-download-hover.svg" alt="Solo descargas" class="top_icons-hover">
+        </div>
+        <div class="top_icons icon_enlarge">
+          <label for="label_view">
+            <img src="./assets/img/icon-max-normal.svg" alt="Ampliar" class="top_icons_simple">
+            <img src="./assets/img/icon-max-hover.svg" alt="Ampliar" class="top_icons-hover">
+          </label>
+        </div>
+      </div>
+      <p class="users">User</p>
+      <p class="titles">Título GIFO</p>
+    </div>
   </section>
+  <section class="section-trending-gifos">
+    <h3 class="subtitle-trending-gifos">Trending GIFOS</h3>
+    <p class="letter-trending-gifos">Mira los últimos <br> GIFOS de nuestra comunidad.</p>
+    <div class="gifos-carousel-container">
+        <!--slider izquierda-->
+      <div class="content-sliders left" id="left">
+        <img src="./assets/img/button-slider-left.svg" alt="boton izquierda" class="btn-icon">
+        <img src="./assets/img/button-slider-left-hover.svg" alt="boton izquierda" class="btn-icon-hover">
+      </div>
+      <!--Contenedor del gifo a clonar-->
+      <div class="carousel-container">
+         <!--obtendra los gifos-->
+        <div class="carousel">
+        </div>
+      </div>
+      <!--slider derecha-->
+      <div class="content-sliders right" id="right">
+        <img src="./assets/img/Button-Slider-right.svg" alt="boton derecha" class="btn-icon">
+        <img src="./assets/img/Button-Slider-right-hover.svg" alt="boton derecha" class="btn-icon-hover">
+      </div>
+    </div>
+  </section>
+<!-- SECTION FOOTER -->
   <section class="section-footer">
     <footer class="footer">
       <div class="share">
         <span class="share-in">Compartir en:</span>
         <div class="content-icon">
           <a href=""><i class="fab fa-facebook-f netwrorks"></i></a>
-          <a href=""><i class="fab fa-twitter netwrorks" ></i></a>
+          <a href=""><i class="fab fa-twitter netwrorks"></i></a>
           <a href=""><i class="fab fa-instagram netwrorks"></i></a>
         </div>
       </div>
@@ -138,7 +183,8 @@
       </div>
     </footer>
   </section>
-  <script src="./js/script.js"> </script>   
-  <script src="./js/api.js"></script>
+  <script type="text/javascript" src="./js/script.js"> </script>
+  <script type="text/javascript" src="./js/api.js"></script>
+  <script type="text/javascript" src="./js/carousel.js"></script>
 </body>
 </html>

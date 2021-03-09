@@ -100,12 +100,14 @@ body.dark .section-header .blue-line-up {
   opacity: 0;
   cursor: pointer;
 }
-.section-header .container-logo-menu .menu-gifos .bars-icon, .section-header .container-logo-menu .menu-gifos .close-icon {
+.section-header .container-logo-menu .menu-gifos .bars-icon,
+.section-header .container-logo-menu .menu-gifos .close-icon {
   transition: 0.4s ease all;
   color: #572EE5;
   font-size: 20px;
 }
-body.dark .section-header .container-logo-menu .menu-gifos .bars-icon, body.dark .section-header .container-logo-menu .menu-gifos .close-icon {
+body.dark .section-header .container-logo-menu .menu-gifos .bars-icon,
+body.dark .section-header .container-logo-menu .menu-gifos .close-icon {
   color: #fff;
 }
 .section-header .container-logo-menu .menu-gifos .close-icon {
@@ -189,11 +191,12 @@ body.dark .section-main-search .title-gifos {
 }
 .section-main-search .box-family-image {
   max-width: 273px;
-  margin: 31px auto 0PX;
+  margin: 31px auto 0px;
 }
 .section-main-search .box-family-image .family-image {
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 .section-main-search .container-search-gifos {
   width: 100%;
@@ -320,6 +323,7 @@ body.dark .section-main-search .container-search-gifos .button-clean .clean-icon
   font-size: 16px;
   font-weight: 700;
   line-height: 25px;
+  margin-bottom: 7px;
 }
 .section-main-search .trending-section .words-trending {
   margin-top: 2px;
@@ -331,18 +335,20 @@ body.dark .section-main-search .container-search-gifos .button-clean .clean-icon
   text-transform: capitalize;
   max-width: 225px;
 }
-.section-main-search .trending-section .subtitle-trending, .section-main-search .trending-section .box-words-trending {
+.section-main-search .trending-section .subtitle-trending,
+.section-main-search .trending-section .box-words-trending {
   color: #572EE5;
   text-align: center;
 }
-body.dark .section-main-search .trending-section .subtitle-trending, body.dark .section-main-search .trending-section .box-words-trending {
+body.dark .section-main-search .trending-section .subtitle-trending,
+body.dark .section-main-search .trending-section .box-words-trending {
   color: #fff;
 }
 .section-main-search .line-section {
   display: none;
   width: 157px;
   height: 1px;
-  border: 1px solid #9CAFC3;
+  border: 1px solid #9cafc3;
   opacity: 0.5;
   margin: 35px auto 0;
 }
@@ -405,7 +411,7 @@ body.dark .section-main-search .section-gifos-search .title-search {
   border-radius: 25px;
   font-family: Montserrat-Bold;
   font-size: 13px;
-  color: #572EE5;
+  color: #572ee5;
   letter-spacing: 0;
   margin-top: 78px;
   cursor: pointer;
@@ -485,34 +491,127 @@ body.dark .section-main-search .section-gifos-search .title-search {
   margin: 0 auto;
 }
 
-.section-trending-gifos {
+.container_template {
+  display: none;
+  position: relative;
+  margin-left: 21px;
+  margin-bottom: 25px;
+  transition: 0.3s ease-in-out;
+  width: 156px;
+  height: 120px;
+}
+.container_template.class-gifo-list {
+  margin: 0;
+  margin-right: 22px;
+  width: 243px;
+  height: 187px;
+}
+.container_template.class-gifo-list .container_template-hover .users {
+  margin: 139px 0 0 18px;
+  color: #ffffff;
+  text-align: left;
+}
+.container_template.class-gifo-list .container_template-hover .titles {
+  margin: 6px 0 51px 18px;
+  color: #ffffff;
+  text-align: left;
+}
+.container_template .gif_clone {
+  display: block;
+  position: absolute;
   width: 100%;
-  height: 430px;
-  background-color: #F3F5F8;
+  height: 100%;
+}
+.container_template .container_template-hover {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background: #572ee5;
+}
+.container_template .container_template-hover .icons_container_template {
+  height: 42px;
+  display: flex;
+  justify-content: flex-end;
+}
+.container_template .container_template-hover .icons_container_template .top_icons {
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+}
+.container_template .container_template-hover .icons_container_template .top_icons .top_icons-hover {
+  display: none;
+}
+.container_template .container_template-hover .icons_container_template .top_icons:hover .top_icons_simple {
+  display: none;
+  cursor: pointer;
+}
+.container_template .container_template-hover .icons_container_template .top_icons:hover .top_icons-hover {
+  display: block;
+  cursor: pointer;
+}
+.container_template .container_template-hover .users {
+  margin: 90px 0 0 13px;
+  color: #ffffff;
+  text-align: left;
+}
+.container_template .container_template-hover .titles {
+  margin: 5px 0 27px 12px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.section-trending-gifos {
+  margin-top: 100px;
   text-align: center;
-  margin-top: 45px;
+  height: 430px;
+  background: #F3F5F8;
+  padding-top: 46px;
 }
 body.dark .section-trending-gifos {
   background-color: #222326;
 }
-.section-trending-gifos .trending-title {
-  padding: 40px 0 7px 0;
-  line-height: 30px;
+.section-trending-gifos .subtitle-trending-gifos {
+  font-family: Montserrat-Bold;
   font-size: 20px;
   color: #572EE5;
-  font-family: Montserrat-Bold;
+  text-align: center;
+  line-height: 30px;
 }
-body.dark .section-trending-gifos .trending-title {
+body.dark .section-trending-gifos .subtitle-trending-gifos {
   color: #fff;
 }
-.section-trending-gifos .trending-text {
-  padding-bottom: 32px;
-  line-height: 23px;
-  font-size: 16px;
+.section-trending-gifos .letter-trending-gifos {
   font-family: Roboto-Regular;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  line-height: 23px;
+  margin-top: 7px;
 }
-body.dark .section-trending-gifos .trending-text {
+body.dark .section-trending-gifos .letter-trending-gifos {
   color: #fff;
+}
+.section-trending-gifos .gifos-carousel-container .carousel-container {
+  margin-top: 32px;
+  padding-left: 22px;
+  display: inline-block;
+  width: 100%;
+  height: 187px;
+}
+.section-trending-gifos .gifos-carousel-container .carousel-container .carousel {
+  height: inherit;
+  white-space: nowrap;
+  overflow: scroll;
+}
+.section-trending-gifos .gifos-carousel-container .carousel-container .carousel::-webkit-scrollbar {
+  display: none;
+}
+.section-trending-gifos .gifos-carousel-container .content-sliders {
+  display: none;
+}
+.section-trending-gifos .gifos-carousel-container .content-sliders .btn-icon-hover {
+  display: none;
 }
 
 .section-footer {
@@ -707,7 +806,7 @@ body.dark .section-footer .footer .reserved {
   .section-main-search .trending-section .subtitle-trending {
     font-size: 18px;
   }
-  .section-main-search .trending-section .words-trending {
+  .section-main-search .trending-section .words-trendings {
     margin-top: 7px;
     font-size: 16px;
     max-width: none;
@@ -822,6 +921,75 @@ body.dark .section-footer .footer .reserved {
     line-height: 25px;
   }
 
+  .container_template {
+    margin-left: 29px;
+    margin-bottom: 28px;
+    width: 260px;
+    height: 200px;
+  }
+  .container_template.class-gifo-list {
+    margin-right: 30px;
+    width: 357px;
+    height: 275px;
+  }
+  .container_template.class-gifo-list:last-child {
+    margin: 0;
+  }
+  .container_template:hover .container_template-hover {
+    display: block;
+  }
+
+  .section-trending-gifos {
+    margin-top: 95px;
+    height: 640px;
+  }
+  .section-trending-gifos .title-class-gifo-lists {
+    padding-top: 67px;
+  }
+  .section-trending-gifos .content-class-gifo-lists {
+    margin-top: 12px;
+  }
+  .section-trending-gifos .gifos-carousel-container {
+    display: flex;
+    margin: auto;
+    margin-top: 53px;
+    width: 90%;
+    max-width: 1285px;
+  }
+  .section-trending-gifos .gifos-carousel-container .carousel-container {
+    padding: 0;
+    margin-top: 0;
+    max-width: 1161px;
+    height: 275px;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .section-trending-gifos .gifos-carousel-container .carousel-container .carousel {
+    height: 275px;
+    overflow: hidden;
+  }
+  .section-trending-gifos .gifos-carousel-container .content-sliders {
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-top: 119px;
+  }
+  .section-trending-gifos .gifos-carousel-container .content-sliders.left {
+    margin-right: 22px;
+  }
+  .section-trending-gifos .gifos-carousel-container .content-sliders.right {
+    margin-left: -8px;
+  }
+  .section-trending-gifos .gifos-carousel-container .content-sliders:hover .btn-icon {
+    display: none;
+  }
+  .section-trending-gifos .gifos-carousel-container .content-sliders:hover .btn-icon-hover {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+
   .section-trending-gifos {
     width: 100%;
     height: 640px;
@@ -865,7 +1033,7 @@ body.dark .section-footer .footer .reserved {
     background: #572EE5;
     content: "";
     position: absolute;
-    top: 116px;
+    top: 122px;
   }
 }
 

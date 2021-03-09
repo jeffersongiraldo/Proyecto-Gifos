@@ -1,6 +1,6 @@
-@import 'reset.scss';
-@import 'variables.scss';
-@import 'typography.scss';
+@import "reset.scss";
+@import "variables.scss";
+@import "typography.scss";
 
 // Codigo para cambiar el texto de modo nocturno y modo diurno
 .dark-mode {
@@ -16,8 +16,7 @@
     }
   }
 }
-
-// Mixins para el Modo Nocturno 
+// Mixins para el Modo Nocturno
 @mixin darkmode-white-color {
   body.dark & {
     color: $white-color;
@@ -52,10 +51,11 @@
   }
 }
 
-// Estilos vista Mobile First 
+// Estilos vista Mobile First
 body {
-  transition: .3s ease all;
-  &.dark { // Estilo que se aplicará al body cuando se active la clase Dark
+  transition: 0.3s ease all;
+  &.dark {
+    // Estilo que se aplicará al body cuando se active la clase Dark
     background-color: $background-dark-mode;
   }
 }
@@ -95,8 +95,9 @@ body {
         opacity: 0;
         cursor: pointer;
       }
-      .bars-icon, .close-icon {
-        transition: .4s ease all;
+      .bars-icon,
+      .close-icon {
+        transition: 0.4s ease all;
         color: $primary-color;
         font-size: $menu-hamburguer-size;
         @include darkmode-white-color();
@@ -112,9 +113,9 @@ body {
         display: none;
         .list-menu-nav {
           height: 100vh;
-          background-color: rgba(87,46,229,0.90);
+          background-color: rgba(87, 46, 229, 0.9);
           padding-top: 17px;
-          transition: .3s ease all;
+          transition: 0.3s ease all;
           @include darkmode-black-background();
           li {
             text-align: center;
@@ -141,13 +142,13 @@ body {
         }
       }
       .checkbox-input:checked {
-        &~.bars-icon {
+        & ~ .bars-icon {
           display: none;
         }
-        &~.close-icon {
+        & ~ .close-icon {
           display: block;
         }
-        &~.nav-gifos {
+        & ~ .nav-gifos {
           display: block;
         }
       }
@@ -181,10 +182,11 @@ body {
   }
   .box-family-image {
     max-width: 273px;
-    margin: 31px auto 0PX;
+    margin: 31px auto 0px;
     .family-image {
       width: 100%;
       object-fit: cover;
+      display: block;
     }
   }
   .container-search-gifos {
@@ -299,6 +301,7 @@ body {
       font-size: 16px;
       font-weight: 700;
       line-height: 25px;
+      margin-bottom: 7px;
     }
     .words-trending {
       margin-top: 2px;
@@ -310,7 +313,8 @@ body {
       text-transform: capitalize;
       max-width: 225px;
     }
-    .subtitle-trending, .box-words-trending {
+    .subtitle-trending,
+    .box-words-trending {
       color: $primary-color;
       text-align: center;
       @include darkmode-white-color();
@@ -320,7 +324,7 @@ body {
     display: none;
     width: 157px;
     height: 1px;
-    border: 1px solid #9CAFC3;
+    border: 1px solid #9cafc3;
     opacity: 0.5;
     margin: 35px auto 0;
     @include activeSection();
@@ -373,7 +377,7 @@ body {
         border-radius: 25px;
         font-family: Montserrat-Bold;
         font-size: 13px;
-        color: #572EE5;
+        color: #572ee5;
         letter-spacing: 0;
         margin-top: 78px;
         cursor: pointer;
@@ -383,7 +387,8 @@ body {
 }
 .section-favoritos {
   display: none;
-  &.activeSection { // Se muestra el contenido cuando se activa la clase desde JS
+  &.activeSection {
+    // Se muestra el contenido cuando se activa la clase desde JS
     display: block;
   }
   // Estilos a la seccion title e icono Fav
@@ -420,7 +425,8 @@ body {
 }
 .section-mis-gifos {
   display: none;
-  &.activeSection { // Se muestra el contenido cuando se activa la clase desde JS
+  &.activeSection {
+    // Se muestra el contenido cuando se activa la clase desde JS
     display: block;
   }
   // Estilos a la seccion title e icono Mis GIFOS
@@ -457,72 +463,175 @@ body {
     }
   }
 }
-.section-trending-gifos{
-  width: 100%;
-  height: 430px;
-  background-color: $font-gray;
+//Template de las CARDS Gifos(fondo morado), se asocia directamente con js
+.container_template {
+  display: none;
+  position: relative;
+  margin-left: 21px;
+  margin-bottom: 25px;
+  transition: 0.3s ease-in-out;
+  width: 156px;
+  height: 120px;
+  &.class-gifo-list {
+    margin: 0;
+    margin-right: 22px;
+    width: 243px;
+    height: 187px;
+    .container_template-hover {
+      .users {
+        margin: 139px 0 0 18px;
+        color: #ffffff;
+        text-align: left;
+      }
+      .titles {
+        margin: 6px 0 51px 18px;
+        color: #ffffff;
+        text-align: left;
+      }
+    }
+  }
+  .gif_clone {
+    display: block; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  //mediante hover, le damos la funcionalidad de que aprezcan los iconos y el fondo de color
+  .container_template-hover {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background: #572ee5;
+    .icons_container_template {
+      height: 42px;
+      display: flex;
+      justify-content: flex-end;
+      .top_icons {
+        margin: 10px 10px 0 0;
+        cursor: pointer;
+        .top_icons-hover {
+          display: none;
+        }
+        &:hover {
+          .top_icons_simple {
+            display: none;
+            cursor: pointer;
+          }
+          .top_icons-hover {
+            display: block;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .users {
+      margin: 90px 0 0 13px;
+      color: #ffffff;
+      text-align: left;
+    }
+    .titles {
+      margin: 5px 0 27px 12px;
+      color: #ffffff;
+      text-align: left;
+    }
+  }
+}
+//Section Trending
+.section-trending-gifos {
+  margin-top: 100px;
   text-align: center;
-  margin-top: 45px;
+  height: 430px;
+  background: $font-gray;
+  padding-top: 46px;
   body.dark & {
     background-color: #222326;
   }
-  .trending-title{
-    padding: 40px 0 7px 0;
-    line-height: 30px;
-    font-size: 20px;
-    color: $primary-color;
-    font-family: Montserrat-Bold;
-    @include darkmode-white-color();
+  .subtitle-trending-gifos {
+      font-family: Montserrat-Bold;
+      font-size: 20px;
+      color: $primary-color;
+      text-align: center;
+      line-height: 30px;
+      @include darkmode-white-color();
   }
-  .trending-text{
-    padding-bottom:32px;
-    line-height: 23px;
-    font-size: 16px;
-    font-family: Roboto-Regular;
-    @include darkmode-white-color();
-  } 
+  .letter-trending-gifos {
+      font-family: Roboto-Regular;
+      font-size: 16px;
+      color: $color-black;
+      text-align: center;
+      line-height: 23px;
+      margin-top: 7px;
+      @include darkmode-white-color();
+  }
+  .gifos-carousel-container {
+    .carousel-container {
+      margin-top: 32px;
+      padding-left: 22px;
+      display: inline-block;
+      width: 100%; 
+      height: 187px;
+      .carousel {
+        //aplicamos estilos al que tendra los gifos
+        height: inherit;
+        white-space: nowrap; 
+        overflow: scroll; 
+        // para desactivar la barra de scrol que aparece en la parte inferior
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+    .content-sliders {
+      display: none;
+      .btn-icon-hover {
+        display: none;
+      }
+    }
+  }
 }
-.section-footer{
+.section-footer {
   width: 100%;
   height: 196px;
-  .footer{
+  .footer {
     position: relative;
-    display: flex; 
-    flex-wrap: wrap; 
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
-    .share{
+    .share {
       padding: 47px 0 47px 0;
       width: 100%;
-      .share-in{
+      .share-in {
         font-size: 15px;
         letter-spacing: 0;
         font-family: Roboto-Regular;
         @include darkmode-white-color();
-      } 
-      .content-icon{
+      }
+      .content-icon {
         text-align: center;
         padding-top: 24px;
         word-spacing: 19px;
-        .netwrorks{
-          color:$color-icons-social-media;
+        .netwrorks {
+          color: $color-icons-social-media;
         }
-        .netwrorks:hover{
-          color:$color-icons-hover;
+        .netwrorks:hover {
+          color: $color-icons-hover;
           @include darkmode-white-color();
         }
-      } 
+      }
     }
-    .reserved{
-      width: 100%; 
+    .reserved {
+      width: 100%;
       font-size: 14px;
       line-height: 20px;
-      font-family: Roboto-Regular; 
-      @include darkmode-white-color();   
+      font-family: Roboto-Regular;
+      @include darkmode-white-color();
     }
   }
-  .footer::before{
+  .footer::before {
     background: $primary-color;
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 5px;
@@ -530,12 +639,13 @@ body {
   }
 }
 
-@media (min-width:500px){ // Mediaquerie para deshabilitar el salto de linea a los 500px
-  br{ 
+@media (min-width: 500px) {
+  // Mediaquerie para deshabilitar el salto de linea a los 500px
+  br {
     display: none;
   }
 }
-@media (min-width:750px){
+@media (min-width: 750px) {
   .boxGifoSearch {
     width: 200px;
     height: 180px;
@@ -615,12 +725,12 @@ body {
                 }
                 .button-plus-icon:hover {
                   background-color: $primary-color;
-                  &>.plus-icon {
+                  & > .plus-icon {
                     color: $white-color;
                   }
                   body.dark & {
                     background-color: $white-color;
-                    &>.plus-icon {
+                    & > .plus-icon {
                       color: #000000;
                     }
                   }
@@ -631,7 +741,7 @@ body {
                   body.dark & {
                     border-color: $ternary-color;
                     background-color: $ternary-color;
-                    &>.plus-icon {
+                    & > .plus-icon {
                       color: $white-color;
                     }
                   }
@@ -670,12 +780,12 @@ body {
       .subtitle-trending {
         font-size: 18px;
       }
-      .words-trending {
+      .words-trendings {
         margin-top: 7px;
         font-size: 16px;
         max-width: none;
       }
-    } 
+    }
     .line-section {
       width: 338px;
       height: 0.1px;
@@ -693,7 +803,7 @@ body {
         .text-search-sin-contenido {
           font-size: 22px;
         }
-      } 
+      }
       .search-con-contenido {
         padding-top: 60px;
         .container-gifos-search {
@@ -706,8 +816,9 @@ body {
     }
   }
   .section-favoritos {
-    .container-title-section { // Estilos a la seccion title e icono Fav
-      margin-top:11px;
+    .container-title-section {
+      // Estilos a la seccion title e icono Fav
+      margin-top: 11px;
       .icon-favoritos {
         margin-bottom: 8px;
       }
@@ -715,7 +826,8 @@ body {
         font-size: 25px;
       }
     }
-    .fav-sin-contenido { // Estilos a la seccion fav sin contenido
+    .fav-sin-contenido {
+      // Estilos a la seccion fav sin contenido
       margin-top: 110px;
       .img-fav-sin-contenido {
         margin-bottom: 24px;
@@ -726,9 +838,10 @@ body {
         max-width: 430px;
       }
     }
-  } 
+  }
   .section-mis-gifos {
-    .container-title-mis-gifos { // Estilos a la seccion title e icono Mis GIFOS
+    .container-title-mis-gifos {
+      // Estilos a la seccion title e icono Mis GIFOS
       margin-top: 10px;
       .icon-mis-gifos {
         margin-bottom: 8px;
@@ -738,7 +851,8 @@ body {
         line-height: 30px;
       }
     }
-    .mis-gifos-sin-contenido { // Estilos a la seccion Mis GIFOS sin contenido
+    .mis-gifos-sin-contenido {
+      // Estilos a la seccion Mis GIFOS sin contenido
       margin-top: 111px;
       .img-mis-gifos-sin-contenido {
         margin-bottom: 40px;
@@ -749,8 +863,8 @@ body {
       }
     }
   }
-} 
-@media (min-width:1124px){
+}
+@media (min-width: 1124px) {
   // Estilos a la caja de los gifos
   .boxGifoSearch {
     width: 260px;
@@ -775,7 +889,7 @@ body {
               &:last-of-type {
                 .button-plus-icon {
                   width: 54px;
-                  height: 54px;       
+                  height: 54px;
                   .plus-icon {
                     font-size: 45px;
                     padding: 12px;
@@ -817,51 +931,124 @@ body {
       }
     }
   }
-  .section-trending-gifos{
+  .container_template {
+    margin-left: 29px;
+    margin-bottom: 28px;
+    width: 260px;
+    height: 200px;
+    &.class-gifo-list {
+      margin-right: 30px;
+      width: 357px;
+      height: 275px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    &:hover {
+      .container_template-hover {
+        display: block;
+      }
+    }
+  }
+//Section Trending
+  .section-trending-gifos {
+    margin-top: 95px;
+    height: 640px;
+    .title-class-gifo-lists {
+      padding-top: 67px;
+    }
+    .content-class-gifo-lists {
+      margin-top: 12px;
+    }
+    .gifos-carousel-container {
+      display: flex;
+      margin: auto;
+      margin-top: 53px;
+      width: 90%;
+      max-width: 1285px;
+      .carousel-container {
+        padding: 0;
+        margin-top: 0;
+        max-width: 1161px;
+        height: 275px;
+        display: inline-block;
+        overflow: hidden;
+        .carousel {
+          height: 275px;
+          overflow: hidden;
+        }
+      }
+      .content-sliders {
+        display: block;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        margin-top: 119px;
+        &.left {
+          margin-right: 22px;
+        }
+        &.right {
+          margin-left: -8px;
+        }
+        &:hover {
+          .btn-icon {
+            display: none;
+          }
+          .btn-icon-hover {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+  .section-trending-gifos {
     width: 100%;
     height: 640px;
     background-color: $font-gray;
     margin-top: 95px;
-    .trending-title{
+    .trending-title {
       padding: 67px 0 12px 0;
       font-size: 25px;
     }
-    .trending-text{
-      padding-bottom:53px;
+    .trending-text {
+      padding-bottom: 53px;
       font-size: 18px;
-    }  
+    }
   }
-  .section-footer{
+
+  .section-footer {
     height: 116px;
-    .footer{
-    //    justify-content: center;
-      .share{
+    .footer {
+      //    justify-content: center;
+      .share {
         display: flex;
         padding: 50px 0 57px 156px;
-        width: 50%; 
-        .share-in{
+        width: 50%;
+        .share-in {
           font-size: 13px;
-          margin-right: 17px; 
-        } 
-        .content-icon{
+          margin-right: 17px;
+        }
+        .content-icon {
           text-align: center;
           padding-top: 0;
           word-spacing: 19px;
-        } 
+        }
       }
-      .reserved{
-        width: 50%; 
+      .reserved {
+        width: 50%;
         font-size: 13px;
         letter-spacing: 0;
-        padding: 50px 158px 57px 0; 
+        padding: 50px 158px 57px 0;
         text-align: end;
       }
     }
-    .footer::before{
+    .footer::before {
       background: $primary-color;
-      content: '';
+      content: "";
       position: absolute;
-      top: 116px;
+      top: 122px;
     }
   }
 }
