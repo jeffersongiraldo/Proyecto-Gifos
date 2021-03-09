@@ -198,43 +198,116 @@ body.dark .section-main-search .title-gifos {
 .section-main-search .container-search-gifos {
   width: 100%;
   max-width: 334px;
-  height: 50px;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid #572EE5;
   border-radius: 27px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 body.dark .section-main-search .container-search-gifos {
   border-color: #fff;
 }
 .section-main-search .container-search-gifos .search-bar {
-  width: 100%;
+  width: 80%;
+  height: 22px;
   border: none;
-  margin-left: 55px;
   font-family: Roboto-Regular;
   font-size: 16px;
   font-weight: 400;
   color: #000000;
-  padding: 2px 0;
+  margin: 15px 5px 13px 55px;
 }
 body.dark .section-main-search .container-search-gifos .search-bar {
   background-color: #37383C;
   color: #fff;
 }
 .section-main-search .container-search-gifos .button-search {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  border: none;
+  margin: 0 20px;
+  cursor: pointer;
+  color: #572EE5;
+  background-color: transparent;
+}
+.section-main-search .container-search-gifos .button-search.activeSearch {
+  left: 0;
+  color: #9CAFC3;
+}
+.section-main-search .container-search-gifos .button-search .search-icon {
+  color: inherit;
+  font-size: 20px;
+}
+body.dark .section-main-search .container-search-gifos .button-search .search-icon {
+  color: #fff;
+}
+.section-main-search .container-search-gifos .button-clean {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 15px;
   border: none;
   margin: 0 20px;
   cursor: pointer;
   background-color: transparent;
 }
-.section-main-search .container-search-gifos .button-search .search-icon {
+.section-main-search .container-search-gifos .button-clean.activeSearch {
+  display: block;
+  right: 0;
+}
+.section-main-search .container-search-gifos .button-clean.activeSection {
+  display: block;
+}
+.section-main-search .container-search-gifos .button-clean .clean-icon {
   color: #572EE5;
   font-size: 20px;
 }
-body.dark .section-main-search .container-search-gifos .button-search .search-icon {
+body.dark .section-main-search .container-search-gifos .button-clean .clean-icon {
   color: #fff;
+}
+.section-main-search .container-search-gifos .line-search-section {
+  display: none;
+  width: 90%;
+  height: 2px;
+  margin: 0 auto 14px;
+  opacity: 0.5;
+  border: 1px solid #9CAFC3;
+}
+.section-main-search .container-search-gifos .line-search-section.activeSection {
+  display: block;
+}
+.section-main-search .container-search-gifos .container-suggestions-search {
+  display: none;
+  width: 100%;
+}
+.section-main-search .container-search-gifos .container-suggestions-search.activeSection {
+  display: block;
+}
+.section-main-search .suggestion {
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: none;
+}
+.section-main-search .suggestion:last-child {
+  margin-bottom: 18px;
+}
+.section-main-search .suggestion .search-icon-suggestion {
+  width: 15.8px;
+  color: #9CAFC3;
+  margin: 0 14.5px 0 23.5px;
+}
+.section-main-search .suggestion .input-suggestion {
+  font-family: Roboto-Regular;
+  font-size: 16px;
+  color: #9CAFC3;
+  text-align: left;
+  border: none;
 }
 .section-main-search .trending-section {
   margin: 31px 0px 35px;
@@ -290,6 +363,9 @@ body.dark .section-main-search .trending-section .subtitle-trending, body.dark .
   line-height: 30px;
   margin-top: 43px;
 }
+body.dark .section-main-search .section-gifos-search .title-search {
+  color: #fff;
+}
 .section-main-search .section-gifos-search .search-sin-contenido {
   display: none;
   text-align: center;
@@ -309,6 +385,10 @@ body.dark .section-main-search .trending-section .subtitle-trending, body.dark .
 }
 .section-main-search .section-gifos-search .search-con-contenido {
   padding-top: 38px;
+  display: none;
+}
+.section-main-search .section-gifos-search .search-con-contenido.activeSection {
+  display: block;
 }
 .section-main-search .section-gifos-search .search-con-contenido .container-gifos-search {
   display: grid;

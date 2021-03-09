@@ -190,40 +190,105 @@ body {
   .container-search-gifos {
     width: 100%;
     max-width: 334px;
-    height: 50px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid $primary-color;
     border-radius: 27px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     body.dark & {
       border-color: $white-color;
     }
     .search-bar {
-      width: 100%;
+      width: 80%;
+      height: 22px;
       border: none;
-      margin-left: 55px;
       font-family: Roboto-Regular;
       font-size: 16px;
       font-weight: 400;
       color: #000000;
-      padding: 2px 0;
+      margin: 15px 5px 13px 55px;
       body.dark & {
         background-color: $background-dark-mode;
         color: $white-color;
       }
     }
     .button-search {
+      position: absolute;
+      right: 0;
+      top: 15px;
+      border: none;
+      margin: 0 20px;
+      cursor: pointer;
+      color: $primary-color;
+      background-color: transparent;
+      &.activeSearch {
+        left: 0;
+        color: $ternary-color;
+      }
+      .search-icon {
+        color: inherit;
+        font-size: 20px;
+        @include darkmode-white-color();
+      }
+    }
+    .button-clean {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 15px;
       border: none;
       margin: 0 20px;
       cursor: pointer;
       background-color: transparent;
-      .search-icon {
+      &.activeSearch {
+        display: block;
+        right: 0;
+      }
+      @include activeSection();
+      .clean-icon {
         color: $primary-color;
         font-size: 20px;
         @include darkmode-white-color();
       }
+    }
+    .line-search-section {
+      display: none;
+      width: 90%;
+      height: 2px;
+      margin: 0 auto 14px;
+      opacity: 0.5;
+      border: 1px solid $ternary-color;
+      @include activeSection();
+    }
+    .container-suggestions-search {
+      display: none;
+      width: 100%;
+      @include activeSection();
+    }
+  }
+  .suggestion {
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: none;
+    &:last-child {
+      margin-bottom: 18px;
+    }
+    .search-icon-suggestion {
+      width: 15.8px;
+      color: $ternary-color;
+      margin: 0 14.5px 0 23.5px;
+    }
+    .input-suggestion {
+      font-family: Roboto-Regular;
+      font-size: 16px;
+      color: $ternary-color;
+      text-align: left;
+      border: none;
     }
   }
   .trending-section {
@@ -272,6 +337,7 @@ body {
       color: $primary-color;
       line-height: 30px;
       margin-top: 43px;
+      @include darkmode-white-color();
     }
     .search-sin-contenido {
       display: none;
@@ -290,6 +356,8 @@ body {
     }
     .search-con-contenido {
       padding-top: 38px;
+      display: none;
+      @include activeSection();
       .container-gifos-search {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
