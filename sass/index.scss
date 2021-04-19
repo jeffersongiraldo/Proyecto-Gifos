@@ -61,7 +61,9 @@ body {
 }
 .section-header {
   width: 100%;
-  position: relative;
+  background-color: $white-color;
+  position: fixed;
+  top: 0;
   .blue-line-up {
     width: 100%;
     height: 5px;
@@ -161,6 +163,7 @@ body {
 }
 .section-main-search {
   width: 100%;
+  margin-top: 7px;
   &.desactiveSection {
     display: none;
   }
@@ -904,6 +907,10 @@ body {
     }
   }
   .section-main-search {
+    margin-top: 176px;
+    .container-search-gifos {
+      &.scrollBar {}
+    }
     .line-section {
       margin-top: 75px;
     }

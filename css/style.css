@@ -65,7 +65,9 @@ body.dark {
 
 .section-header {
   width: 100%;
-  position: relative;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
 }
 .section-header .blue-line-up {
   width: 100%;
@@ -167,6 +169,7 @@ body.dark .section-header .container-logo-menu .menu-gifos .nav-gifos .list-menu
 
 .section-main-search {
   width: 100%;
+  margin-top: 7px;
 }
 .section-main-search.desactiveSection {
   display: none;
@@ -906,6 +909,9 @@ body.dark .section-footer .footer::before {
     padding: 12px;
   }
 
+  .section-main-search {
+    margin-top: 176px;
+  }
   .section-main-search .line-section {
     margin-top: 75px;
   }

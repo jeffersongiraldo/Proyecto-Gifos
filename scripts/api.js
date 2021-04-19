@@ -66,7 +66,6 @@ function useApiData(gifos) {
       boxGifoSearch.appendChild(gifoSeacrh);
       containerGifosSearch.appendChild(boxGifoSearch);
     }
-    // document.querySelector('#container-gifos-search').innerHTML = `<img src = "${gifos.data[i].images.original.url}">`
   }
 }
 
@@ -135,6 +134,18 @@ buttonClean.addEventListener('click', () => {
   trendingSection.classList.remove('desactiveSection');
 })
 
+// ----------------------Search Header ----------------------------------------------
+const cntSearchBar = document.getElementsByClassName('container-search-gifos')[0];
+const cntSearchHeader = document.getElementsByClassName('container-search-nav')[0];
+
+function activeSearchHeader() {
+  if (document.documentElement.scrollTop > 350) {
+    let ctnSearchBarClone = cntSearchBar.cloneNode(true);
+    cntSearchHeader.appendChild(ctnSearchBarClone)
+  }
+}
+
+
 // ----------------------Tags Trending Gifos ----------------------------------------------
 window.onload = sendApiRandomRequest();
 async function sendApiRandomRequest(){
@@ -149,3 +160,6 @@ function useApiRandomData(tagGifo) {
     tagsTrendingGifos[i].innerHTML = tagGifo.data[Math.floor(Math.random()*28)].name;
   }
 }
+
+// let response = await fetch(`https://media2.giphy.com/media/${this.id}/giphy.gif?${apiKey}&rid=giphy.gif`);
+//   let file = await response.blob();
