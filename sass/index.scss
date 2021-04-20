@@ -4,252 +4,251 @@
 
 //REFERENCIA PARA LAS TARJETAS DE LOS GIFOS
 .gifs-contents {
+  display: none;
+  position: relative;
+  margin-left: 21px;
+  margin-bottom: 25px;
+  transition: 0.3s ease-in-out;
+  width: 40%;
+  height: 120px;
+  .gifo-img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .gifs-contents-hover {
     display: none;
-    position: relative;
-    margin-left: 21px;
-    margin-bottom: 25px;
-    transition: 0.3s ease-in-out;
-    width: 40%;
-    height: 120px;
-    .gifo-img {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-    .gifs-contents-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background: $primary-color;
+    .icons-gifs-contents {
+      height: 42px;
+      display: flex;
+      justify-content: flex-end;
+      .gifs-icon {
+        margin: 10px 10px 0 0;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        .gifs-icon-hover {
+            display: none;
+        }
+        &:hover {
+          .gifs-icon-normal {
+            display: none;
+            cursor: pointer;
+          }
+          .gifs-icon-hover {
+            display: block;
+            cursor: pointer;
+          }
+        }
+      }
+      .delete-icon {
+          display: none;
+      }
+      .fav-icon-activate {
+        position: relative;
         display: none;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0.6;
-        background: $primary-color;
-        .icons-gifs-contents {
-            height: 42px;
-            display: flex;
-            justify-content: flex-end;
-            .gifs-icon {
-                margin: 10px 10px 0 0;
-                width: 32px;
-                height: 32px;
-                cursor: pointer;
-                .gifs-icon-hover {
-                    display: none;
-                }
-                &:hover {
-                    .gifs-icon-normal {
-                        display: none;
-                        cursor: pointer;
-                    }
-                    .gifs-icon-hover {
-                        display: block;
-                        cursor: pointer;
-                    }
-                }
-            }
-            .delete-icon {
-                display: none;
-            }
-            .fav-icon-activate {
-                position: relative;
-                display: none;
-                .gifs-icon-base {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-                .gifs-icon-activate {
-                    position: absolute;
-                    top: 7px;
-                    left: 6px;
-                }
-            }
+        .gifs-icon-base {
+          position: absolute;
+          top: 0;
+          left: 0;
         }
-        .user-gifs {
-            margin: 90px 0 0 13px;
-            font-family: Roboto-Regular;
-            font-size: 15px;
-            color: $color-white;
-            text-align: left;
-            text-transform: capitalize;
+        .gifs-icon-activate {
+          position: absolute;
+          top: 7px;
+          left: 6px;
         }
-        .title-gifs {
-            margin: 5px 5px 0 12px;
-            font-family: Roboto-Bold;
-            font-size: 16px;
-            color: $color-white;
-            text-align: left;
-        }
+      }
     }
-    // CAROUSEL
-    &.trending-gifo {
-        margin: 0;
-        margin-right: 22px;
-        width: 243px;
-        height: 187px;
-        .gifs-contents-hover {
-            .user-gifs {
-                margin: 139px 0 0 18px;
-                //@include roboto-font(15px,18px,400);
-                color: $color-white;
-                text-align: left;
-            }
-            .title-gifs {
-                margin: 6px 15px 0 18px;
-                //@include roboto-font(16px,19px,700);
-                color: $color-white;
-                text-align: left;
-                white-space: normal;
-            }
-        }
+    .user-gifs {
+      margin: 90px 0 0 13px;
+      font-family: Roboto-Regular;
+      font-size: 15px;
+      color: $color-white;
+      text-align: left;
+      text-transform: capitalize;
     }
+    .title-gifs {
+      margin: 5px 5px 0 12px;
+      font-family: Roboto-Bold;
+      font-size: 16px;
+      color: $color-white;
+      text-align: left;
+    }
+  }
+  // CAROUSEL
+  &.trending-gifo {
+    margin: 0;
+    margin-right: 22px;
+    width: 243px;
+    height: 187px;
+    .gifs-contents-hover {
+      .user-gifs {
+        margin: 139px 0 0 18px;
+        //@include roboto-font(15px,18px,400);
+        color: $color-white;
+        text-align: left;
+      }
+      .title-gifs {
+        margin: 6px 15px 0 18px;
+        //@include roboto-font(16px,19px,700);
+        color: $color-white;
+        text-align: left;
+        white-space: normal;
+      }
+    }
+  }
 }
 //ESTILOS A LA SECCION PRINCIPAL
 .section-main {
-    margin: auto;
-    .button-gifo {
-        display: none;
-        margin:0 auto;
-        margin-top: 51px;
-        border: 1px solid $primary-color;
-        border-radius: 25px;
-        width: 127px;
-        height: 50px;
-        text-align: center;
-        font-family: Montserrat-Bold;
-        font-size: 13px;
-        color: $primary-color;
-        letter-spacing: 0;
-        text-transform: uppercase;
-        cursor: pointer;
-        align-content: center;
-        padding: 15px;
-        &:active {
-            background-color: $primary-color;
-            color: $color-white;
-        }
+  margin: auto;
+  .button-gifo {
+    display: none;
+    margin:0 auto;
+    margin-top: 51px;
+    border: 1px solid $primary-color;
+    border-radius: 25px;
+    width: 127px;
+    height: 50px;
+    text-align: center;
+    font-family: Montserrat-Bold;
+    font-size: 13px;
+    color: $primary-color;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-content: center;
+    padding: 15px;
+    &:active {
+      background-color: $primary-color;
+      color: $color-white;
     }
+  }
     //ESTILOS PARA LA VISTA AMPLIADA
     .show_fullView {
-        display: none;
-        &:checked {
-            ~ .section-full-view {
-                display: block;
-            }
+      display: none;
+      &:checked {
+        ~ .section-full-view {
+          display: block;
         }
+      }
     }
     .section-full-view {
-        display: none;
-        position: fixed;
-        background: rgba(255, 255, 255, 0.95);
+      display: none;
+      position: fixed;
+      background: rgba(255, 255, 255, 0.95);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      overflow: scroll;
+      .full-screen-contain {
+        margin: auto;
         width: 100%;
-        height: 100%;
-        z-index: 2;
-        overflow: scroll;
-        .full-screen-contain {
-            margin: auto;
-            width: 100%;
-            max-width: 318px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: flex-end;
-            .close-gifo-full-screen {
-                display: block;
-                margin: 64px 40px 78px 288px;
-                cursor: pointer;
-            }
-            .gifo-section-fs {
-                text-align: center;
-
-                .gifo-full-screen {
-                    margin: auto;
-                    display: block;
-                    width: 318px;
-                    height: 245px;
-                }
-            }
-            .description-full-screen {
-                margin-right: 10px;
-                width: 69%;
-                display: inline-block;
-                .user-full-screen {
-                    margin-left: 6px;
-                    margin-top: 14px;
-                    //@include roboto-font(15px,18px,400);
-                    text-align: left;
-                    text-transform: capitalize;
-                }
-                .title-full-screen {
-                    margin-top: 6px;
-                    //@include roboto-font(16px,19px,700);
-                    text-align: left;
-                    text-transform: capitalize;
-                }
-            }
-            .addition-full-screen {
-                margin-top: 14px;
-                margin-right: 15px;
-                display: inline-block;
-                width: 36px;
-                height: 36px;
-                text-align: center;
-                cursor: pointer;
-                .addition-gifo-fs {
-                    width: inherit;
-                    height: inherit;
-                }
-                .fs-icon-activate {
-                    display: none;
-                }
-                .fs-icon-hover {
-                    display: none;
-                }
-                &:hover {
-                    .fs-icon-normal {
-                        display: none;
-                    }
-                    .fs-icon-activate {
-                        margin: auto;
-                        margin-top: 9px;
-                        display: block;
-                        width: 20px;
-                        height: 18px;
-                        text-align: right;
-                    }
-                    .fs-icon-hover {
-                        display: block;
-                    }
-                }
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-            .fs-delete-icon {
-                display: none;
-            }
-            .fs-fav-act-contents {
-                display: none;
-                position: relative;
-                .fs-fav-act-base {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-                .fs-fav-act-icon {
-                    position: absolute;
-                    top: 10px;
-                    left: 9px;
-                }
-            }
+        max-width: 318px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        .close-gifo-full-screen {
+          display: block;
+          margin: 64px 40px 78px 288px;
+          cursor: pointer;
         }
+        .gifo-section-fs {
+          text-align: center;
+          .gifo-full-screen {
+            margin: auto;
+            display: block;
+            width: 318px;
+            height: 245px;
+          }
+        }
+        .description-full-screen {
+          margin-right: 10px;
+          width: 69%;
+          display: inline-block;
+          .user-full-screen {
+            margin-left: 6px;
+            margin-top: 14px;
+            //@include roboto-font(15px,18px,400);
+            text-align: left;
+            text-transform: capitalize;
+          }
+          .title-full-screen {
+            margin-top: 6px;
+            //@include roboto-font(16px,19px,700);
+            text-align: left;
+            text-transform: capitalize;
+          }
+        }
+        .addition-full-screen {
+          margin-top: 14px;
+          margin-right: 15px;
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          text-align: center;
+          cursor: pointer;
+          .addition-gifo-fs {
+            width: inherit;
+            height: inherit;
+          }
+          .fs-icon-activate {
+            display: none;
+          }
+          .fs-icon-hover {
+            display: none;
+          }
+          &:hover {
+            .fs-icon-normal {
+              display: none;
+            }
+            .fs-icon-activate {
+              margin: auto;
+              margin-top: 9px;
+              display: block;
+              width: 20px;
+              height: 18px;
+              text-align: right;
+            }
+            .fs-icon-hover {
+              display: block;
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        .fs-delete-icon {
+          display: none;
+        }
+        .fs-fav-act-contents {
+          display: none;
+          position: relative;
+          .fs-fav-act-base {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .fs-fav-act-icon {
+            position: absolute;
+            top: 10px;
+            left: 9px;
+          }
+        }
+      }
     }
     //LINEAS, SUPERIOR E INFERIOR
     .all-lines {
-        margin: auto;
-        border: 0;
-        height: 5px;
-        background-color: $primary-color;
+      margin: auto;
+      border: 0;
+      height: 5px;
+      background-color: $primary-color;
     }
     .section-header {
         display: flex;
