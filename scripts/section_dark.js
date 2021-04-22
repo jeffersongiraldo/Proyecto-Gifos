@@ -35,8 +35,8 @@ night_mode.addEventListener("click", ()=>{
         btn_new_gifs_hover[0].src = "./assets/img/CTA-crear-gifo-hover.svg";
         btn_arrow[0].src = "./assets/img/button-slider-left.svg";
         btn_arrow_hover[0].src = "./assets/img/button-slider-left-hover.svg";
-        btn_arrow[1].src = "./assets/img/button-slider-right.svg";
-        btn_arrow_hover[1].src = "./assets/img/button-slider-right-hover.svg";
+        btn_arrow[1].src = "./assets/img/Button-Slider-right.svg";
+        btn_arrow_hover[1].src = "./assets/img/Button-Slider-right-hover.svg";
         search_icon[0].src = "./assets/img/icon-search.svg";
 
         close_suggest_icon.src = "./assets/img/close.svg";
