@@ -115,11 +115,15 @@
 }
 .gifs-contents.trending-gifo .gifs-contents-hover .user-gifs {
   margin: 139px 0 0 18px;
+  font-family: Roboto-Regular;
+  font-size: 15px;
   color: #fff;
   text-align: left;
 }
 .gifs-contents.trending-gifo .gifs-contents-hover .title-gifs {
   margin: 6px 15px 0 18px;
+  font-family: Montserrat-Bold;
+  font-size: 16px;
   color: #fff;
   text-align: left;
   white-space: normal;
@@ -196,11 +200,15 @@
 .section-main .section-full-view .full-screen-contain .description-full-screen .user-full-screen {
   margin-left: 6px;
   margin-top: 14px;
+  font-family: Roboto-Regular;
+  font-size: 15px;
   text-align: left;
   text-transform: capitalize;
 }
 .section-main .section-full-view .full-screen-contain .description-full-screen .title-full-screen {
   margin-top: 6px;
+  font-family: Montserrat-Bold;
+  font-size: 16px;
   text-align: left;
   text-transform: capitalize;
 }
@@ -460,13 +468,16 @@
   font-size: 16px;
   line-height: 25px;
 }
-.section-main .section-search .trending-contents .trending-content {
+.section-main .section-search .trending-contents .box-popular-tags {
   margin: 2px auto 0 auto;
   width: 225px;
   font-family: Montserrat-Medium;
   font-size: 14px;
   line-height: 25px;
   text-transform: capitalize;
+}
+.section-main .section-search .trending-contents .box-popular-tags .popular-tag {
+  cursor: pointer;
 }
 .section-main .section-search .all-lines-search {
   display: none;
@@ -760,6 +771,8 @@
 }
 .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .cam-screen-contain .cam-screen-uploading .mesagge-create-gifs-contents .content-create-gifs {
   margin-top: 14px;
+  font-family: Montserrat-Bold;
+  font-size: 15px;
   color: white;
 }
 .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .show-gifo-step {
@@ -908,7 +921,7 @@
   .section-main .section-search .search-contain .search-contents .search-input {
     width: 315px;
   }
-  .section-main .section-search .trending-contents .trending-content {
+  .section-main .section-search .trending-contents .box-popular-tags {
     width: 300px;
   }
   .section-main .section-search .results-contain {
@@ -1061,12 +1074,14 @@
   }
   .section-main .section-search .trending-contents {
     margin-top: 73px;
-    text-align: center;
-    color: #572EE5;
   }
-  .section-main .section-search .trending-contents .trending-content {
+  .section-main .section-search .trending-contents .box-popular-tags {
     margin: 7px auto 0 auto;
     width: inherit;
+  }
+  .section-main .section-search .trending-contents .box-popular-tags .popular-tag {
+    font-family: Montserrat-Medium;
+    font-size: 16px;
   }
   .section-main .section-search .all-lines-search {
     margin-top: 55px;
@@ -1077,24 +1092,27 @@
     text-align: center;
   }
   .section-main .section-search .search-without-result-contain .search-without-result-title {
-    color: #572EE5;
+    font-size: 30px;
   }
   .section-main .section-search .search-without-result-contain .search-without-result-img {
     margin: 109px 0 29px 0;
   }
   .section-main .section-search .search-without-result-contain .search-without-result-content {
-    color: #5ED7C6;
+    font-size: 22px;
   }
   .section-main .section-search .results-contain {
     margin-top: 82px;
     max-width: 896px;
+  }
+  .section-main .section-search .results-contain .results-title {
+    font-size: 35px;
   }
   .section-main .section-favorite {
     margin: 11px auto 79px auto;
   }
   .section-main .section-favorite .favorite-gifs-title {
     margin-top: 8px;
-    color: #572EE5;
+    font-size: 25px;
   }
   .section-main .section-favorite .favorite-gifs-contain {
     max-width: 896px;
@@ -1106,6 +1124,7 @@
   .section-main .section-favorite .without-favorites-contain .content-without-favs {
     margin-top: 24px;
     width: 431px;
+    font-size: 22px;
   }
   .section-main .section-myGif {
     margin-top: 10px;
@@ -1131,9 +1150,14 @@
   }
   .section-main .section-trending .title-trending-gifs {
     padding-top: 67px;
+    font-family: Montserrat-Bold;
+    font-size: 25px;
+    line-height: 60px;
   }
   .section-main .section-trending .content-trending-gifs {
     margin-top: 12px;
+    font-family: Roboto-Regular;
+    font-size: 18px;
   }
   .section-main .section-trending .content-trending-gifs .line-break {
     display: inline-block;
@@ -1243,6 +1267,14 @@
     height: 348px;
     padding-top: 114px;
   }
+  .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .create-gifo-decription-step .create-gifo-title {
+    font-family: Montserrat-Bold;
+    font-size: 25px;
+  }
+  .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .create-gifo-decription-step .create-gifo-content {
+    font-family: Roboto-Regular;
+    font-size: 16px;
+  }
   .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .cam-screen-contain {
     display: none;
     margin: 20px;
@@ -1255,6 +1287,10 @@
   }
   .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .cam-screen-contain .cam-screen-uploading .mesagge-create-gifs-contents {
     margin-top: 84px;
+  }
+  .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .cam-screen-contain .cam-screen-uploading .mesagge-create-gifs-contents .content-create-gifs {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
   }
   .section-main .section-createGif .create-gifs-contain .create-gifs-contain-screen .show-gifo-step {
     display: block;
@@ -1276,6 +1312,8 @@
   }
   .section-main .section-createGif .create-gifs-contain .create-gifs-contain-steps .record-again-addition {
     width: 130px;
+    font-family: Montserrat-Bold;
+    font-size: 13px;
     border-bottom: 2px solid white;
     cursor: pointer;
   }
@@ -1307,6 +1345,8 @@
   }
   .section-main .section-footer .networws-contents .title-footer {
     margin: 0 0 0 156px;
+    font-family: Roboto-Regular;
+    font-size: 13px;
   }
   .section-main .section-footer .networws-contents .networws-icon-contents {
     margin-left: 20px;
@@ -1321,6 +1361,8 @@
   }
   .section-main .section-footer .content-footer {
     margin: 0 158px 0 0;
+    font-family: Roboto-Regular;
+    font-size: 13px;
     justify-items: flex-end;
   }
 }

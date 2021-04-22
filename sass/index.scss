@@ -90,13 +90,15 @@
     .gifs-contents-hover {
       .user-gifs {
         margin: 139px 0 0 18px;
-        //@include roboto-font(15px,18px,400);
+        font-family: Roboto-Regular;
+        font-size: 15px;
         color: $color-white;
         text-align: left;
       }
       .title-gifs {
         margin: 6px 15px 0 18px;
-        //@include roboto-font(16px,19px,700);
+        font-family: Montserrat-Bold;
+        font-size: 16px;
         color: $color-white;
         text-align: left;
         white-space: normal;
@@ -175,13 +177,15 @@
           .user-full-screen {
             margin-left: 6px;
             margin-top: 14px;
-            //@include roboto-font(15px,18px,400);
+            font-family: Roboto-Regular;
+            font-size: 15px;
             text-align: left;
             text-transform: capitalize;
           }
           .title-full-screen {
             margin-top: 6px;
-            //@include roboto-font(16px,19px,700);
+            font-family: Montserrat-Bold;
+            font-size: 16px;
             text-align: left;
             text-transform: capitalize;
           }
@@ -344,7 +348,6 @@
         margin: auto;
         margin-top: 7px;
         .title {
-            //@include montserrant-font(25px,33px,700);
             margin: auto;
             color: $primary-color;
             width: 286px;
@@ -761,7 +764,8 @@
                             }
                             .content-create-gifs {
                                 margin-top: 14px;
-                                //@include montserrant-font(13px,15px ,700);
+                                font-family: Montserrat-Bold;
+                                font-size: 15px;
                                 color: white;
                             }
                         }
@@ -930,7 +934,7 @@
                 }
             }
             .trending-contents {
-                .trending-content {
+                .box-popular-tags {
                     width: 300px;
                 }
             }
@@ -1103,15 +1107,13 @@
             }
             .trending-contents {
                 margin-top: 73px;
-                text-align: center;
-                color: $primary-color;
-                .trending-title {
-                    
-                }
-                .trending-content {
+                .box-popular-tags {
                     margin: 7px auto 0 auto;
-                    //@include montserrant-font(16px,25px,500);
                     width: inherit;
+                    .popular-tag {
+                        font-family: Montserrat-Medium;
+                        font-size: 16px;
+                    }
                 }
             }
             .all-lines-search {
@@ -1122,22 +1124,20 @@
                 margin: 158px 0 104px 0;
                 text-align: center;
                 .search-without-result-title {
-                    //@include montserrant-font(30px,30px,700);
-                    color: $primary-color;
+                    font-size: 30px;
                 }
                 .search-without-result-img {
                     margin: 109px 0 29px 0;
                 }
                 .search-without-result-content {
-                    //@include montserrant-font(22px,25px,700);
-                    color: $secondary-color;
+                    font-size: 22px;
                 }
             }
             .results-contain {
                 margin-top: 82px;
                 max-width: 896px;
                 .results-title {
-                    //@include montserrant-font(35px,30px,700);
+                    font-size: 35px;
                 }
             }
         }
@@ -1146,8 +1146,7 @@
             margin: 11px auto 79px auto;
             .favorite-gifs-title {
                 margin-top: 8px;
-                //@include montserrant-font(25px,30px,700);
-                color: $primary-color;
+                font-size: 25px;
             }
             .favorite-gifs-contain {
                 max-width: 896px;
@@ -1158,7 +1157,7 @@
                 .content-without-favs {
                     margin-top: 24px;
                     width: 431px;
-                    //@include montserrant-font(22px,33px,700);
+                    font-size: 22px;
                 }
             }
         }
@@ -1186,11 +1185,14 @@
             height: 640px;
             .title-trending-gifs {
                 padding-top: 67px;
-                //@include montserrant-font(25px,30px,700);
+                font-family: Montserrat-Bold;
+                font-size: 25px;
+                line-height: 60px;
             }
             .content-trending-gifs {
                 margin-top: 12px;
-                //@include roboto-font(18px,23px,400);
+                font-family: Roboto-Regular;
+                font-size: 18px;
                 .line-break {
                     display: inline-block;
                 }
@@ -1302,10 +1304,12 @@
                         height: 348px;
                         padding-top: 114px;
                         .create-gifo-title {
-                            //@include montserrant-font(25px, 35px, 700 );
+                            font-family: Montserrat-Bold;
+                            font-size: 25px;
                         }
                         .create-gifo-content {
-                            //@include roboto-font(16px,28px,400);
+                            font-family: Roboto-Regular;
+                            font-size: 16px;
                         }
                     }
                     .cam-screen-contain {
@@ -1321,7 +1325,8 @@
                             .mesagge-create-gifs-contents {
                                 margin-top: 84px;
                                 .content-create-gifs {
-                                    //@include montserrant-font(15px,20px ,700);
+                                    font-family: Montserrat-Bold;
+                                    font-size: 15px;
                                 }
                             }
                         }
@@ -1347,7 +1352,8 @@
                     }
                     .record-again-addition {
                         width: 130px;
-                        //@include montserrant-font(13px,16px,700);
+                        font-family: Montserrat-Bold;
+                        font-size: 13px;
                         border-bottom: 2px solid white;
                         cursor: pointer;
                         &:hover {
@@ -1381,7 +1387,8 @@
                 display: flex;
                 .title-footer {
                     margin: 0 0 0 156px;
-                    //@include roboto-font(13px,18px,400);
+                    font-family: Roboto-Regular;
+                    font-size: 13px;
                 }
                 .networws-icon-contents {
                     margin-left: 20px;
@@ -1397,7 +1404,8 @@
             }
             .content-footer {
                 margin: 0 158px 0 0;
-                //@include roboto-font(13px,13px,400);
+                font-family: Roboto-Regular;
+                font-size: 13px;
                 justify-items: flex-end;
             }
         }
